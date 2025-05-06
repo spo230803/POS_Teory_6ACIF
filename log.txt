@@ -5,3 +5,7 @@
 2025-05-06 10:12:53#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (D)
 2025-05-06 10:39:40#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : Non è un File! (C:\)
 2025-05-06 10:39:54#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (G:\)
+2025-05-06 12:16:42#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (A)
+2025-05-06 12:18:06#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : Non è un File! (C:\)
+2025-05-06 12:23:17#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (DD)
+2025-05-06 12:26:06#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (HTTPS://DUCKDUCKGO.COM/?KP=-2&KAV=1&K1=-1&KAY=B&KAJ=M&KAK=-1&KAX=-1&KAO=-1&KAU=-1&KAE=T&KG=P&K5=1&Q=5)

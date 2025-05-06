@@ -8,11 +8,9 @@
 
 package at.spengergasse.spoto;
 
-import at.spengergasse.spoto.CMD.Exit;
-import at.spengergasse.spoto.CMD.Help;
-import at.spengergasse.spoto.CMD.Lista;
+import at.spengergasse.spoto.CMD.*;
 import at.spengergasse.spoto.CMD.Matrici.Add;
-import at.spengergasse.spoto.CMD.NomeUtente;
+import at.spengergasse.spoto.CMD.Matrici.SetSeparaValore;
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import lombok.Getter;
@@ -32,9 +30,11 @@ public class Terminale {
     //Variabili Salvate a livello Globale
     private String produtKeyUser;
     private String nomeUtente;
+    private String separaValoreMarice=";";
 
     private Map<String , Class<? extends CMDBase>> mappaComandi =new HashMap();
-    public Map<String , VarMatrice> mappaMatrici =new HashMap();
+    private Map<String , VarMatrice> mappaMatrici =new HashMap();
+
 
     public Terminale() {
         mappaComandi.put("NOME_UTENTE" , NomeUtente.class );
@@ -42,6 +42,8 @@ public class Terminale {
         mappaComandi.put("HELP" , Help.class );
         mappaComandi.put("LISTA" , Lista.class );
         mappaComandi.put("ADD" , Add.class );
+        mappaComandi.put("SET_SEPARA_MATRICE", SetSeparaValore.class);
+        mappaComandi.put("PK", PK.class);
     }
 
     public void avvioProgramma(){
@@ -53,7 +55,7 @@ public class Terminale {
 
     public String terminaleGetInput(String msg){
         if(msg != null && msg.length() > 0){
-            System.out.println(msg);
+            System.out.println(msg+" : ");
         }
         Scanner scanner = new Scanner(System.in); // Creazione di un oggetto Scanner per leggere input
         String inputUtente = scanner.nextLine();
@@ -101,6 +103,7 @@ public class Terminale {
            }
        }else {
            System.out.println("Comando non trovato: " + comando);
+           System.out.println("Usa il comando HELP per l'elendo dei comandi");
        }//end if - controllo esistenza comando
         cmd(); //Alla fine richiedo di nuovo un comando
     }//cmd

@@ -17,7 +17,7 @@ public class Main {
     public static final String APP_VERSION = "1.0.0";
     public static final String APP_UPDATE = "2025-05-06";
 
-    public static final String PRODUT_KEY = "x";
+    public static final String PRODUT_KEY = "X";
 
     //IMPOSTAZIONI
     public static final String SETING_SEPARA_VALORE = "#";

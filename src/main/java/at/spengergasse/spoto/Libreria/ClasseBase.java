@@ -20,8 +20,15 @@ public class ClasseBase {
     }
 
     public boolean controllaPK(){
-        if(terminal.getProdutKeyUser() == null || terminal.getProdutKeyUser().isEmpty() ){return false;}
-        if(terminal.getProdutKeyUser().equals(PRODUT_KEY)){return true;}
+        if(terminal.getProdutKeyUser() == null || terminal.getProdutKeyUser().isEmpty() ){
+            System.out.println("Produt Key non inserito! Impossible avviare il Programma!!!");
+            System.out.println("Per risolvere il problema : inserire il Produk Key con il comando PK");
+            return false;
+        }
+        if(PRODUT_KEY.equals(terminal.getProdutKeyUser())){
+            return true;
+        }
+        System.out.println("Produt key inserito non è valido per questo Programma!");
         return false;
     }//controllaPK
 }//ClasseBase

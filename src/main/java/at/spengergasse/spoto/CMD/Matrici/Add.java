@@ -10,7 +10,6 @@ package at.spengergasse.spoto.CMD.Matrici;
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
-import org.aspectj.weaver.ast.Var;
 
 public class Add extends CMDBase {
 
@@ -25,6 +24,11 @@ public class Add extends CMDBase {
     @Override
     public void avvio() {
         System.out.println("-----------");
+
+        if(!super.controllaPK()){
+            return;
+        }
+
         String nomeMatrice =  terminal.terminaleGetInput("Inserire nome Matrice");
         String fileMatrice =  terminal.terminaleGetInput("Inserire file della Matrice");
         if (nomeMatrice == null || nomeMatrice.isEmpty()) {
@@ -63,5 +67,6 @@ public class Add extends CMDBase {
     public void help() {
         System.out.println("Aggiungi una nuova Matrice da File");
         System.out.println("Verra richiesto un nome Matrice e il percorso del file (es. C:\\User Matrice.txt)");
+        System.out.println("Una riga per ogni riga di Marice e Valori seprarti con " + terminal.getSeparaValoreMarice());
     }
 }//add
