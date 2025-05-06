@@ -1,3 +1,10 @@
+/*
+    Autore  : SPOTO Giorgio
+    Classe  : 6A CIF
+    Ver     : 1.0.0
+    del     : 2025-05-06
+ */
+
 package at.spengergasse.spoto.Libreria;
 
 import lombok.Getter;
@@ -13,16 +20,36 @@ import static at.spengergasse.spoto.Main.SETING_SEPARA_VALORE;
 @Getter
 public class ExeException extends Exception {
 
-    //Variabili Istanza
-    private String zona = null;
+    //COSTANTI
+    private final String INGOTO = "-??-";
 
-    public ExeException(String message, String zona) {
+    //Variabili Istanza
+    private String zona = INGOTO;
+    private String oggetto = INGOTO;
+
+
+    public ExeException(String zona, String message) {
         super(message);
         setZona( zona);
+        salvaLog();
     }//Costruttore
+
+    public ExeException(Object oggetto , String zona , String message) {
+        super(message);
+        setZona( zona);
+        setOggetto( oggetto);
+        salvaLog();
+    }//Costruttore 2
+
+    @Override
+    public String getMessage() {
+        return "Si è verificato un Errore : " + super.getMessage();
+    }
 
 
     private void salvaLog(){
+        //Formato Log = DATA # Oggetto # Zona # Messaggio
+
         FileWriter fw;
         BufferedWriter bw;
         LocalDateTime ora = LocalDateTime.now();
@@ -32,7 +59,7 @@ public class ExeException extends Exception {
         try{
             fw = new FileWriter( SETING_FILE_LOG, true); // Ture = Scrivi alla fine file FALSE = Scrivi dal inzio (Overwhrite)
             bw = new BufferedWriter(fw);
-            bw.write( oraString + SETING_SEPARA_VALORE + getZona() + SETING_SEPARA_VALORE + getMessage()  );
+            bw.write( oraString + SETING_SEPARA_VALORE + getOggetto() + SETING_SEPARA_VALORE + getZona() + SETING_SEPARA_VALORE + getMessage()  );
             bw.newLine();
             bw.close();
             fw.close();
@@ -42,7 +69,11 @@ public class ExeException extends Exception {
     }
 
     private void setZona(String zona) {
-        //setZona = non deve essere pubblico
+        //non deve essere pubblico (Per forzare il passaggio dal costruttore
+        if(zona == null || zona.isEmpty()){zona = INGOTO;}
         this.zona = zona;
+    }
+    private void setOggetto(Object oggetto) {
+        this.oggetto = (oggetto == null) ? INGOTO : oggetto.getClass().getName();
     }
 }//ExeException
