@@ -3,6 +3,8 @@
     Classe  : 6A CIF
     Ver     : 1.0.0
     del     : 2025-05-06
+
+    Gestione del Terminale
  */
 
 
@@ -10,6 +12,7 @@ package at.spengergasse.spoto;
 
 import at.spengergasse.spoto.CMD.*;
 import at.spengergasse.spoto.CMD.Matrici.Add;
+import at.spengergasse.spoto.CMD.Matrici.Print;
 import at.spengergasse.spoto.CMD.Matrici.SetSeparaValore;
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.VarMatrice;
@@ -37,6 +40,7 @@ public class Terminale {
 
 
     public Terminale() {
+        //Elenco di Funzioni
         mappaComandi.put("NOME_UTENTE" , NomeUtente.class );
         mappaComandi.put("EXIT", Exit.class);
         mappaComandi.put("HELP" , Help.class );
@@ -44,6 +48,7 @@ public class Terminale {
         mappaComandi.put("ADD" , Add.class );
         mappaComandi.put("SET_SEPARA_MATRICE", SetSeparaValore.class);
         mappaComandi.put("PK", PK.class);
+        mappaComandi.put("PRINT", Print.class);
     }
 
     public void avvioProgramma(){

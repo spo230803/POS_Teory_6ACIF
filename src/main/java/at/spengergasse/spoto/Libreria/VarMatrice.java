@@ -3,6 +3,8 @@
     Classe  : 6A CIF
     Ver     : 1.0.0
     del     : 2025-05-06
+
+    Classe per la memorizazione della Matrice
  */
 
 
@@ -133,14 +135,24 @@ public class VarMatrice implements Cloneable{
     }//setValore
 
     @Override
-    public String toString() {
+    public String toString()   {
         StringBuilder strRetrun = new StringBuilder();
-        for(ArrayList<Integer> riga : matriceDati){
-            for(Integer i : riga){
+
+        strRetrun.append("--------------------");
+        strRetrun.append("\n");
+        strRetrun.append("Matrice Nome : " + getMatriceNome() + "\n");
+        strRetrun.append("\n");
+        strRetrun.append("\n");
+        for (ArrayList<Integer> riga : matriceDati) {
+            for (Integer i : riga) {
                 strRetrun.append(i).append("\t");
             }
             strRetrun.append("\n");
         }
+
+        strRetrun.append("\n");
+        strRetrun.append("--------------------");
+
         return strRetrun.toString();
     }
 }//VarMatrice

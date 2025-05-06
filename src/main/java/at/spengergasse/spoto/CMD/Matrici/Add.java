@@ -3,6 +3,8 @@
     Classe  : 6A CIF
     Ver     : 1.0.0
     del     : 2025-05-06
+
+    aggiungi da file una Matrice
  */
 
 package at.spengergasse.spoto.CMD.Matrici;

@@ -1,3 +1,11 @@
+/*
+    Autore  : SPOTO Giorgio
+    Classe  : 6A CIF
+    Ver     : 1.0.0
+    del     : 2025-05-06
+
+    Imposta il nome Utente
+ */
 package at.spengergasse.spoto.CMD;
 
 import at.spengergasse.spoto.Libreria.CMDBase;

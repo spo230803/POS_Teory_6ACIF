@@ -76,4 +76,9 @@ public class ExeException extends Exception {
     private void setOggetto(Object oggetto) {
         this.oggetto = (oggetto == null) ? INGOTO : oggetto.getClass().getName();
     }
+
+    @Override
+    public String toString() {
+        return "Errore nel Programma: " + super.getMessage();
+    }
 }//ExeException
