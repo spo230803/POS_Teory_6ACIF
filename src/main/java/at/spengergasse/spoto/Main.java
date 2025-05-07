@@ -23,9 +23,7 @@ public class Main {
     public static final String SETING_SEPARA_VALORE = "#";
     public static final String SETING_FILE_LOG = "log.txt";
     public static final String SETTIING_HELP_CMD = "?";
-
-
-
+    public static final int SETTIING_MAX_MATRICE = 30;
 
 
     public static void main(String[] args) {

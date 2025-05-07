@@ -12,3 +12,6 @@
 2025-05-06 12:45:25#at.spengergasse.spoto.CMD.Matrici.Print#avvio#Si è verificato un Errore : Cannot invoke "at.spengergasse.spoto.Libreria.VarMatrice.toString()" because the return value of "java.util.Map.get(Object)" is null
 2025-05-06 12:46:16#at.spengergasse.spoto.CMD.Matrici.Print#avvio#Si è verificato un Errore : Cannot invoke "at.spengergasse.spoto.Libreria.VarMatrice.toString()" because the return value of "java.util.Map.get(Object)" is null
 2025-05-06 17:01:54#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : Non è un File! (C:)
+2025-05-07 22:36:10#at.spengergasse.spoto.Libreria.VarMatrice#setValore x=0 y=0 valore=1#Si è verificato un Errore : Index 0 out of bounds for length 0
+2025-05-07 22:44:32#at.spengergasse.spoto.Libreria.VarMatrice#setValore x=0 y=0 valore=0#Si è verificato un Errore : Index 0 out of bounds for length 0
+2025-05-07 23:22:11#at.spengergasse.spoto.Libreria.VarMatrice#setValore r=0 c=0 valore=0#Si è verificato un Errore : Index 0 out of bounds for length 0

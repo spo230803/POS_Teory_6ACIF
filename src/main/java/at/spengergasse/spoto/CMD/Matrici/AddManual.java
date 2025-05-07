@@ -10,10 +10,12 @@
 package at.spengergasse.spoto.CMD.Matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
+import at.spengergasse.spoto.Libreria.ExeException;
 import at.spengergasse.spoto.Libreria.Libreria;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
-import org.aspectj.weaver.ast.Var;
+
+import static at.spengergasse.spoto.Main.SETTIING_MAX_MATRICE;
 
 public class AddManual extends CMDBase {
     public AddManual(Terminale terminal) {
@@ -29,16 +31,17 @@ public class AddManual extends CMDBase {
 
         String nomeMatrice = nomeNuovaMatrice();
         int numRighe = numeroRighe();
-        int numValori = numeroValori();
-        VarMatrice nuovaMatrice = new VarMatrice(nomeMatrice);
+        int numColonna = numeroColonna();
+        nuovaMatrice = new VarMatrice(nomeMatrice);
 
         for(int r = 0; r < numRighe; r++){
-            for(int v = 0; v < numValori; v++){
-
-                nuovaMatrice.setValore(r,v, inputValore(r,v));
+            nuovaMatrice.createRiga();
+            for(int c = 0; c < numColonna; c++){
+                inputValore(r,c);
             }
         }//for righe
 
+        terminal.addMappaMatrici(nomeMatrice , nuovaMatrice);
 
     }//avvio
 
@@ -53,22 +56,42 @@ public class AddManual extends CMDBase {
 
     private int numeroRighe() {
         String numRighe = terminal.terminaleGetInput("Numero righe");
-        if(numRighe == null || numRighe.equals("") || Libreria.isInteger(numRighe)) { numeroRighe();}
+        if(numRighe == null || numRighe.equals("") || !Libreria.isInteger(numRighe)) { numeroRighe();}
+        else {
+            int num = Integer.parseInt(numRighe);
+            if(num < 2 || num > SETTIING_MAX_MATRICE){
+                System.out.println("ERRORE : nummero righe deve essre tra 2 e "+SETTIING_MAX_MATRICE);
+                numeroRighe();
+            }
+        }
         return Integer.parseInt(numRighe);
     }//numeroRighe
 
-    private int numeroValori(){
-        String numValori = terminal.terminaleGetInput("Numero valori");
-        if(numValori == null || numValori.equals("") || Libreria.isInteger(numValori)) { numeroValori();}
-        return Integer.parseInt(numValori);
-    }//numeroValori
+    private int numeroColonna(){
+        String numColonna = terminal.terminaleGetInput("Numero colonne");
+        if(numColonna == null || numColonna.equals("") || !Libreria.isInteger(numColonna)) { numeroColonna();}
+        else {
+            int num = Integer.parseInt(numColonna);
+            if(num < 2 || num > SETTIING_MAX_MATRICE){
+                System.out.println("ERRORE : nummero colonne deve essre tra 2 e "+SETTIING_MAX_MATRICE);
+                numeroColonna();
+            }
+        }
+        return Integer.parseInt(numColonna);
+    }//numeroColonna
 
-    private int inputValore(int r , int v){
-        String val = terminal.terminaleGetInput("Inserire il valore per [ "+r+" , "+v+" ] ");
-        if(val == null || val.equals("") || Libreria.isInteger(val)) {inputValore(r,v);}
+    private void inputValore(int r , int c){
+        String val = terminal.terminaleGetInput("Inserire il valore per [ "+r+" , "+c+" ] ");
+        if(val == null || val.equals("") || !Libreria.isInteger(val)) {inputValore(r,c);}
 
+        //Salvataggio nella Matrice
+        try {
+            nuovaMatrice.addValore(r, Integer.parseInt(val));
+        }catch (ExeException e) {
+            System.out.println("Errore Input [ "+r+" , "+c+" ] : " + e.getMessage());
+            inputValore(r,c);
+        }
 
-        return Integer.parseInt(val);
     }//inputValore
 
 

@@ -42,13 +42,14 @@ public class Terminale {
         mappaComandi.put("NOME_UTENTE" , NomeUtente.class );
         mappaComandi.put("EXIT", Exit.class);
         mappaComandi.put("HELP" , Help.class );
-        mappaComandi.put("LISTA" , Lista.class );
+        mappaComandi.put("LIST" , List.class );
         mappaComandi.put("ADD" , Add.class );
         mappaComandi.put("SET_SEPARA_MATRICE", SetSeparaValore.class);
         mappaComandi.put("PK", PK.class);
         mappaComandi.put("PRINT", Print.class);
         mappaComandi.put("ADD_MANUAL" , AddManual.class);
         mappaComandi.put("VER" , Ver.class);
+        mappaComandi.put("DELETE" , Delete.class);
     }//Terminale
 
     public void avvioProgramma(){
@@ -114,7 +115,7 @@ public class Terminale {
     }//cmd
 
 
-    public void setMappaMatrici(String nomeMatrice, VarMatrice clone) {
+    public void addMappaMatrici(String nomeMatrice, VarMatrice clone) {
         this.mappaMatrici.put(nomeMatrice, clone);
     }
 }//Executive

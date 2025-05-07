@@ -58,7 +58,7 @@ public class Add extends CMDBase {
             return false;
         }
 
-       terminal.setMappaMatrici(nomeMatrice , matrice.clone());
+       terminal.addMappaMatrici(nomeMatrice , matrice.clone());
 
         return true;
     }//caricaFile

@@ -22,6 +22,8 @@ public class Print extends CMDBase {
 
     @Override
     public void avvio() {
+        if(!super.controllaPK()){return;}
+
         String nomeMatrice = terminal.terminaleGetInput("Nome della Matrice da stampare");
         VarMatrice printMatrice ;
 

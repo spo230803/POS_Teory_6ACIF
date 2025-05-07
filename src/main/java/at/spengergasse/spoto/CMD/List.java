@@ -12,27 +12,32 @@ package at.spengergasse.spoto.CMD;
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
 
-public class Lista extends CMDBase {
-    public Lista(Terminale terminal) {
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class List extends CMDBase {
+    public List(Terminale terminal) {
         super(terminal);
     }
 
     @Override
     public void avvio() {
-        if(super.controllaPK()){return;}
-
-        int count = 0;
+        if(!super.controllaPK()){return;}
+        java.util.List<String> listaChiave = new ArrayList<>(terminal.getMappaMatrici().keySet());
+        Collections.sort(listaChiave);
 
         System.out.println("------------");
-        for (String chiave : terminal.getMappaMatrici().keySet()) {
-            System.out.println(chiave);
-            count++;
-        }
-        if(count == 0) {
+        if(listaChiave.size() == 0){
             System.out.println("Nessuna matrice trovata");
+        }else {
+            System.out.println("Sono state trovate " + listaChiave.size() + " matrici");
+            System.out.println();
+            for (String chiave : listaChiave) {
+                System.out.println(chiave);
+            }
         }
         System.out.println("------------");
-    }
+    }//avvio
 
     @Override
     public void help() {

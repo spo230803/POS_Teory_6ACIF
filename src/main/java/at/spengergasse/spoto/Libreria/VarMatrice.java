@@ -24,7 +24,7 @@ import static at.spengergasse.spoto.Libreria.Libreria.isInteger;
 public class VarMatrice implements Cloneable{
 
     private String fileName; //Origine della Matrice
-    private ArrayList<ArrayList<Integer>> matriceDati; //Array multivettoriale [][]
+    private ArrayList<ArrayList<Integer>> matriceDati = new ArrayList<>(); //Array multivettoriale [R - Riga][C - Colonna]
     private String matriceNome;
     private Terminale terminale;
 
@@ -111,7 +111,6 @@ public class VarMatrice implements Cloneable{
     }
 
 
-
     public int getValore(int x , int y) throws ExeException {
         try{
             return matriceDati.get(x).get(y);
@@ -120,13 +119,31 @@ public class VarMatrice implements Cloneable{
         }
     }//getValore
 
-    public void setValore(int x , int y, int valore) throws ExeException {
+    public void setValore(int r , int c, int valore) throws ExeException {
         try {
-            matriceDati.get(x).set(y, valore);
+            matriceDati.get(r).set(c, valore);
         } catch (Exception e) {
-            throw new ExeException(this, "setValore x=" + x + " y=" + y + " valore=" + valore, e.getMessage());
+            throw new ExeException(this, "setValore r=" + r + " c=" + c + " valore=" + valore, e.getMessage());
         }
     }//setValore
+
+    public void addValore(int r , int valore) throws ExeException {
+        if(matriceDati.get(r) == null){
+            createRiga();
+        }
+        try {
+            matriceDati.get(r).add(valore);
+        } catch (RuntimeException e) {
+            throw new ExeException(this, "setValore x=" + r + "  valore=" + valore, e.getMessage());
+        }
+    }//addValore
+
+
+    public void createRiga(){
+        ArrayList<Integer> riga = new ArrayList<>();
+        matriceDati.add(riga);
+    }//createRiga
+
 
     @Override
     public String toString()   {
@@ -136,7 +153,6 @@ public class VarMatrice implements Cloneable{
         strRetrun.append("\n");
         strRetrun.append("Matrice Nome : " + getMatriceNome() + "\n");
         strRetrun.append("\n");
-        strRetrun.append("\n");
         for (ArrayList<Integer> riga : matriceDati) {
             for (Integer i : riga) {
                 strRetrun.append(i).append("\t");
@@ -144,7 +160,6 @@ public class VarMatrice implements Cloneable{
             strRetrun.append("\n");
         }
 
-        strRetrun.append("\n");
         strRetrun.append("--------------------");
 
         return strRetrun.toString();
