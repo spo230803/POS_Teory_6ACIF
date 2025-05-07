@@ -19,6 +19,8 @@ public class Lista extends CMDBase {
 
     @Override
     public void avvio() {
+        if(super.controllaPK()){return;}
+
         int count = 0;
 
         System.out.println("------------");

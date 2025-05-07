@@ -12,6 +12,10 @@ package at.spengergasse.spoto.CMD;
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Help extends CMDBase {
 
     public Help(Terminale terminal) {
@@ -23,9 +27,15 @@ public class Help extends CMDBase {
         System.out.println("------------");
         System.out.println("Elenco di tutti i Comandi disponibili:");
         System.out.println();
-        for (String chiave : terminal.getMappaComandi().keySet()) {
+
+        List<String> listaChiave = new ArrayList<>(terminal.getMappaComandi().keySet());
+        Collections.sort(listaChiave);
+
+        for (String chiave : listaChiave) {
             System.out.println(chiave);
         }
+        System.out.println();
+        System.out.println("Scriveere il comando seguito da ? per maggiorni informazioni sul qeul comando");
         System.out.println("------------");
     }
 

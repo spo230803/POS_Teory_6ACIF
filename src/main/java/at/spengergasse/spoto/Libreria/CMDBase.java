@@ -3,6 +3,8 @@
     Classe  : 6A CIF
     Ver     : 1.0.0
     del     : 2025-05-06
+
+    Classe base per la Creazione dei Comandi
  */
 package at.spengergasse.spoto.Libreria;
 

@@ -27,9 +27,7 @@ public class Add extends CMDBase {
     public void avvio() {
         System.out.println("-----------");
 
-        if(!super.controllaPK()){
-            return;
-        }
+        if(!super.controllaPK()){return;}
 
         String nomeMatrice =  terminal.terminaleGetInput("Inserire nome Matrice");
         String fileMatrice =  terminal.terminaleGetInput("Inserire file della Matrice");

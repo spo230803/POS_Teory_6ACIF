@@ -17,6 +17,7 @@ import lombok.Setter;
 
 import java.io.*;
 import java.util.ArrayList;
+import static at.spengergasse.spoto.Libreria.Libreria.isInteger;
 
 @Setter
 @Getter
@@ -109,14 +110,7 @@ public class VarMatrice implements Cloneable{
         }
     }
 
-    public boolean isInteger(String str) {
-        try {
-            Integer.parseInt(str);
-            return true; // La stringa è un numero intero
-        } catch (NumberFormatException e) {
-            return false; // La stringa non è un numero intero
-        }
-    }
+
 
     public int getValore(int x , int y) throws ExeException {
         try{

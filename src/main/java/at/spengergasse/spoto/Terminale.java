@@ -11,11 +11,9 @@
 package at.spengergasse.spoto;
 
 import at.spengergasse.spoto.CMD.*;
-import at.spengergasse.spoto.CMD.Matrici.Add;
-import at.spengergasse.spoto.CMD.Matrici.Print;
-import at.spengergasse.spoto.CMD.Matrici.SetSeparaValore;
-import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.VarMatrice;
+import at.spengergasse.spoto.CMD.Matrici.*;
+import at.spengergasse.spoto.Libreria.*;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service; //Crea un solo Oggetto per TUTTO Il programma
@@ -49,7 +47,9 @@ public class Terminale {
         mappaComandi.put("SET_SEPARA_MATRICE", SetSeparaValore.class);
         mappaComandi.put("PK", PK.class);
         mappaComandi.put("PRINT", Print.class);
-    }
+        mappaComandi.put("ADD_MANUAL" , AddManual.class);
+        mappaComandi.put("VER" , Ver.class);
+    }//Terminale
 
     public void avvioProgramma(){
         NomeUtente nomeUtente = new NomeUtente(this);
@@ -78,7 +78,7 @@ public class Terminale {
 
     public void cmd(){
         //Metodo per esecuzione dei Comandi
-        String comando = terminaleGetInput("Cosa desideri fare?");
+        String comando = terminaleGetInput("Inserire un Comando");
         if(comando == null || comando.length() == 0){
             //Se non esiste il comando lo richiedo di nuovo
             cmd();
