@@ -10,8 +10,8 @@
 
 package at.spengergasse.spoto;
 
-import at.spengergasse.spoto.CMD.*;
 import at.spengergasse.spoto.CMD.Matrici.*;
+import at.spengergasse.spoto.CMD.exe.*;
 import at.spengergasse.spoto.Libreria.*;
 
 import lombok.Getter;

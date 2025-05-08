@@ -7,7 +7,7 @@
     Stampa a video tutti i comandi disponibili
  */
 
-package at.spengergasse.spoto.CMD;
+package at.spengergasse.spoto.CMD.exe;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
@@ -36,6 +36,7 @@ public class Help extends CMDBase {
         }
         System.out.println();
         System.out.println("Scriveere il comando seguito da ? per maggiorni informazioni sul qeul comando");
+        System.out.println("Scrivere in Input 'stop' per l'arresto d'Emergenza del Programma!");
         System.out.println("------------");
     }
 

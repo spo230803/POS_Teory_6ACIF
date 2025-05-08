@@ -6,12 +6,10 @@
 
     Imposta il PK del programma
  */
-package at.spengergasse.spoto.CMD;
+package at.spengergasse.spoto.CMD.exe;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
-
-import static at.spengergasse.spoto.Main.PRODUT_KEY;
 
 public class PK extends CMDBase {
 

@@ -7,7 +7,7 @@
     Lista di tutte le Matrici salvate
  */
 
-package at.spengergasse.spoto.CMD;
+package at.spengergasse.spoto.CMD.exe;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;

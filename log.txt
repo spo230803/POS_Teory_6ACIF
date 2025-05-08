@@ -21,3 +21,4 @@
 2025-05-08 09:44:29#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : La Matrice ha un valore non valido : A
 2025-05-08 09:44:29#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : Si è verificato un Errore : La Matrice ha un valore non valido : A
 2025-05-08 09:45:59#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : La Matrice non ha per riga gli stesi valori!
+2025-05-08 11:06:21#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
