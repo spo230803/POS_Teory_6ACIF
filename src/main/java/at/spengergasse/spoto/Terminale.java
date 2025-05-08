@@ -66,7 +66,16 @@ public class Terminale {
         Scanner scanner = new Scanner(System.in); // Creazione di un oggetto Scanner per leggere input
         String inputUtente = scanner.nextLine();
         //scanner.close();
-        return inputUtente.toUpperCase().trim();
+
+        inputUtente = inputUtente.toUpperCase().trim();
+
+        if(inputUtente.equals("STOP")){
+            //Uscita di Emmergenza
+            System.out.println("Arresto d'Emmergenza del Programma in corso ...");
+            ExeException  e = new ExeException(this , "terminaleGetInput" , "Uscita d'Emmergenza del Programma" );
+            System.exit(-1);
+        }
+        return inputUtente;
     }//terminaleGetInput
 
     public void cancellaConsole(){

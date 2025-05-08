@@ -41,7 +41,7 @@ public class AddManual extends CMDBase {
             }
         }//for righe
 
-        terminal.addMappaMatrici(nomeMatrice , nuovaMatrice);
+        terminal.addMappaMatrici(nomeMatrice , nuovaMatrice.clone());
 
     }//avvio
 

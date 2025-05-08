@@ -10,13 +10,14 @@
 package at.spengergasse.spoto.CMD.Matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
+import at.spengergasse.spoto.Libreria.ExeException;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
 
 public class Add extends CMDBase {
 
     //Variabili di Istanza
-    private VarMatrice matrice = new VarMatrice();
+    private VarMatrice matrice;
 
 
     public Add(Terminale terminal) {
@@ -28,6 +29,7 @@ public class Add extends CMDBase {
         System.out.println("-----------");
 
         if(!super.controllaPK()){return;}
+
 
         String nomeMatrice =  terminal.terminaleGetInput("Inserire nome Matrice");
         String fileMatrice =  terminal.terminaleGetInput("Inserire file della Matrice");
@@ -42,6 +44,9 @@ public class Add extends CMDBase {
             return;
         }
 
+        //Creo la Matirce
+        matrice = new VarMatrice(terminal , nomeMatrice);
+
        if (caricaFile(fileMatrice , nomeMatrice)) {
            System.out.println("Matrice caricata correttamente");
        }else {
@@ -53,7 +58,7 @@ public class Add extends CMDBase {
     private boolean caricaFile(String fileMatrice , String nomeMatrice) {
         try{
             matrice.caricaMatriceDaFile(fileMatrice , nomeMatrice);
-        }catch (Exception e) {
+        }catch (ExeException e) {
             System.out.println(e.getMessage());
             return false;
         }

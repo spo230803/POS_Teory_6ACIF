@@ -30,13 +30,19 @@ public class VarMatrice implements Cloneable{
 
 
 
+    //Costruttori
+    public VarMatrice() {}
     public VarMatrice(String matriceNome) {
         setMatriceNome(matriceNome);
     }
-    public VarMatrice() {}
     public VarMatrice(Terminale terminal) {
         setTerminale(terminal);
     }
+    public VarMatrice(Terminale terminale, String matriceNome) {
+        setTerminale(terminale);
+        setMatriceNome(matriceNome);
+    }
+
 
 
     public void caricaMatriceDaFile(String fileName , String matriceNome) throws ExeException {
