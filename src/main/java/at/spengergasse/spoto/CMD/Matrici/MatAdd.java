@@ -14,13 +14,13 @@ import at.spengergasse.spoto.Libreria.ExeException;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
 
-public class Add extends CMDBase {
+public class MatAdd extends CMDBase {
 
     //Variabili di Istanza
     private VarMatrice matrice;
 
 
-    public Add(Terminale terminal) {
+    public MatAdd(Terminale terminal) {
         super(terminal);
     }
 
@@ -31,13 +31,9 @@ public class Add extends CMDBase {
         if(!super.controllaPK()){return;}
 
 
-        String nomeMatrice =  terminal.terminaleGetInput("Inserire nome Matrice");
+        String nomeMatrice =  super.inputString("Nome della Matrice");
         String fileMatrice =  terminal.terminaleGetInput("Inserire file della Matrice");
-        if (nomeMatrice == null || nomeMatrice.isEmpty()) {
-            System.out.println("Nome Matrice non valido");
-            avvio();
-            return;
-        }
+
         if (fileMatrice == null || fileMatrice.isEmpty()) {
             System.out.println("File della Matrice non valido");
             avvio();
@@ -48,7 +44,7 @@ public class Add extends CMDBase {
         matrice = new VarMatrice(terminal , nomeMatrice);
 
        if (caricaFile(fileMatrice , nomeMatrice)) {
-           System.out.println("Matrice caricata correttamente");
+           System.out.println("Matrice caricata correttamente : "+nomeMatrice);
        }else {
            System.out.println("Errore durante il caricamento della Matrice");
        }

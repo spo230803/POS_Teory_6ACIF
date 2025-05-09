@@ -7,7 +7,7 @@
     Impota il separatore dei valri delle Matrice
  */
 
-package at.spengergasse.spoto.CMD.Matrici;
+package at.spengergasse.spoto.CMD.exe;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
@@ -20,7 +20,7 @@ public class SetSeparaValore extends CMDBase {
     @Override
     public void avvio() {
         System.out.println("-------------------");
-        String separaMatrice =  terminal.terminaleGetInput("Inserire il carattere di saperazione della Matrice");
+        String separaMatrice =  terminal.terminaleGetInput("Inserire il carattere di saperazione dei valori");
 
         //Controlla Input
         if(separaMatrice.equals("") || separaMatrice==null ){
@@ -35,7 +35,7 @@ public class SetSeparaValore extends CMDBase {
 
     @Override
     public void help() {
-        System.out.println("Imposta il carattere per separare valore nella riga Matrice");
+        System.out.println("Imposta il carattere per separare valore nella riga");
         System.out.println("Valore attuale "+terminal.getSeparaValoreMarice());
     }//help
 }//SetSeparaValore

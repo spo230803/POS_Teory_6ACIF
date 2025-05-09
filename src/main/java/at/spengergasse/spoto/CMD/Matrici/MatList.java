@@ -7,7 +7,7 @@
     Lista di tutte le Matrici salvate
  */
 
-package at.spengergasse.spoto.CMD.exe;
+package at.spengergasse.spoto.CMD.Matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
@@ -15,15 +15,15 @@ import at.spengergasse.spoto.Terminale;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class List extends CMDBase {
-    public List(Terminale terminal) {
+public class MatList extends CMDBase {
+    public MatList(Terminale terminal) {
         super(terminal);
     }
 
     @Override
     public void avvio() {
         if(!super.controllaPK()){return;}
-        java.util.List<String> listaChiave = new ArrayList<>(terminal.getMappaMatrici().keySet());
+        ArrayList<String> listaChiave = new ArrayList<>(terminal.getMappaMatrici().keySet());
         Collections.sort(listaChiave);
 
         System.out.println("------------");

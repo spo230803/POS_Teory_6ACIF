@@ -15,8 +15,8 @@ import at.spengergasse.spoto.Libreria.ExeException;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
 
-public class Print extends CMDBase {
-    public Print(Terminale terminal) {
+public class MatPrint extends CMDBase {
+    public MatPrint(Terminale terminal) {
         super(terminal);
     }
 
@@ -24,13 +24,9 @@ public class Print extends CMDBase {
     public void avvio() {
         if(!super.controllaPK()){return;}
 
-        String nomeMatrice = terminal.terminaleGetInput("Nome della Matrice da stampare");
+        String nomeMatrice = super.inputString("Nome della Matrice da stampare");
         VarMatrice printMatrice ;
 
-        if(nomeMatrice == null || nomeMatrice.equals("")){
-            avvio();
-            return;
-        }
         try {
             printMatrice =  terminal.getMappaMatrici().get(nomeMatrice);
         }catch(Exception e){

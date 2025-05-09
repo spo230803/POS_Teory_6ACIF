@@ -19,7 +19,30 @@ public class ClasseBase {
         this.terminal = terminal;
     }
 
+    public String inputString(String msg){
+        String nome = terminal.terminaleGetInput(msg);
+        if(nome == null || nome.equals("")){
+            System.out.print("! Input non valido ! \t");
+            return inputString(msg);
+        }
+        else{ return nome;}
+    }//inputNome
+
+    public Integer inputInteger(String msg){
+        String num = terminal.terminaleGetInput(msg);
+        if(num == null || num.equals("") || !Libreria.isInteger(num)){
+            System.out.print("! Input non valido ! \t");
+            return inputInteger(msg);
+        }
+        else{ return Integer.parseInt(num);}
+    }//inputInteger
+
     public boolean controllaPK(){
+
+        //Vbgio - implemntare Cripto by MD5
+        return true;
+
+        /*
         if(terminal.getProdutKeyUser() == null || terminal.getProdutKeyUser().isEmpty() ){
             System.out.println("Produt Key non inserito! Impossible avviare il Programma!!!");
             System.out.println("Per risolvere il problema : inserire il Produk Key con il comando PK");
@@ -30,6 +53,7 @@ public class ClasseBase {
         }
         System.out.println("Produt key inserito non è valido per questo Programma!");
         return false;
+         */
     }//controllaPK
 
 }//ClasseBase

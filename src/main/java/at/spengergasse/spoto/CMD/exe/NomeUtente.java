@@ -18,10 +18,7 @@ public class NomeUtente extends CMDBase {
 
     @Override
     public void avvio() {
-        String nomeUtente = this.terminal.terminaleGetInput("Inserire nome Utente");
-        if(nomeUtente.equals("") || nomeUtente == null) {
-            this.avvio();
-        }
+        String nomeUtente = super.inputString("Inserire nome Utente");
         this.terminal.setNomeUtente(nomeUtente);
         this.terminal.cancellaConsole();
         System.out.println("Benvenuto Utente : " + nomeUtente);

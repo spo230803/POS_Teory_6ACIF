@@ -19,11 +19,7 @@ public class PK extends CMDBase {
 
     @Override
     public void avvio() {
-        String newPK = terminal.terminaleGetInput("Inserire il Produk key");
-        if(newPK == null || newPK.equals("")) {
-            avvio();
-            return;
-        }
+        String newPK = super.inputString("Inserire il Produk key");
         terminal.setProdutKeyUser(newPK);
         if(super.controllaPK()){
             System.out.println("Produk key e programma avvioato con successo :-)");

@@ -10,6 +10,7 @@
 
 package at.spengergasse.spoto;
 
+import at.spengergasse.spoto.CMD.Grafico.*;
 import at.spengergasse.spoto.CMD.Matrici.*;
 import at.spengergasse.spoto.CMD.exe.*;
 import at.spengergasse.spoto.Libreria.*;
@@ -32,24 +33,37 @@ public class Terminale {
     private String produtKeyUser;
     private String nomeUtente;
     private String separaValoreMarice=";";
+    private int countRisutlato = 0;
 
-    private Map<String , Class<? extends CMDBase>> mappaComandi =new HashMap();
+    private Map<String , Class<? extends CMDBase>> mappaComandi =new HashMap(); //Memorizzo la CLASSE al posto di un Oggeto
     private Map<String , VarMatrice> mappaMatrici =new HashMap();
+    private Map<String , VarGrafico> mappaGrafico =new HashMap();
 
 
     public Terminale() {
         //Elenco di Funzioni
+
+        //Exe
         mappaComandi.put("NOME_UTENTE" , NomeUtente.class );
         mappaComandi.put("EXIT", Exit.class);
         mappaComandi.put("HELP" , Help.class );
-        mappaComandi.put("LIST" , List.class );
-        mappaComandi.put("ADD" , Add.class );
-        mappaComandi.put("SET_SEPARA_MATRICE", SetSeparaValore.class);
+        mappaComandi.put("SET_SEPARA_VALORE", SetSeparaValore.class);
         mappaComandi.put("PK", PK.class);
-        mappaComandi.put("PRINT", Print.class);
-        mappaComandi.put("ADD_MANUAL" , AddManual.class);
         mappaComandi.put("VER" , Ver.class);
-        mappaComandi.put("DELETE" , Delete.class);
+
+        //Gestione Grafici
+        mappaComandi.put("GRA_LIST", GrafList.class);
+        mappaComandi.put("GRA_ADD", GrafAdd.class);
+        mappaComandi.put("GRA_ADD_MANUAL", GrafAddManual.class);
+        mappaComandi.put("GRA_DELETE", GrafDelete.class);
+        mappaComandi.put("GRA_PRINT", GrafPrint.class);
+
+        //Gestione Matrici
+        mappaComandi.put("MAT_ADD" , MatAdd.class );
+        mappaComandi.put("MAT_PRINT", MatPrint.class);
+        mappaComandi.put("MAT_ADD_MANUAL" , MatAddManual.class);
+        mappaComandi.put("MAT_DELETE" , MatDelete.class);
+        mappaComandi.put("MAT_LIST" , MatList.class );
     }//Terminale
 
     public void avvioProgramma(){
@@ -123,8 +137,13 @@ public class Terminale {
         cmd(); //Alla fine richiedo di nuovo un comando
     }//cmd
 
+    public int getCountRisutlato(){
+        countRisutlato++;
+        return countRisutlato;
+    }
 
     public void addMappaMatrici(String nomeMatrice, VarMatrice clone) {
         this.mappaMatrici.put(nomeMatrice, clone);
     }
+    public void addMappaGrafico(String nomeGrafico, VarGrafico clone) { this.mappaGrafico.put(nomeGrafico, clone); }
 }//Executive

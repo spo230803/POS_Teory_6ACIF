@@ -17,8 +17,8 @@ import at.spengergasse.spoto.Terminale;
 
 import static at.spengergasse.spoto.Main.SETTIING_MAX_MATRICE;
 
-public class AddManual extends CMDBase {
-    public AddManual(Terminale terminal) {
+public class MatAddManual extends CMDBase {
+    public MatAddManual(Terminale terminal) {
         super(terminal);
     }
 
@@ -29,7 +29,8 @@ public class AddManual extends CMDBase {
     public void avvio() {
         if(!super.controllaPK()){return;}
 
-        String nomeMatrice = nomeNuovaMatrice();
+        String nomeMatrice = super.inputString("Nome della Matrice");
+        System.out.println("Nome della Matrice: " + nomeMatrice);
         int numRighe = numeroRighe();
         int numColonna = numeroColonna();
         nuovaMatrice = new VarMatrice(nomeMatrice);
@@ -42,17 +43,11 @@ public class AddManual extends CMDBase {
         }//for righe
 
         terminal.addMappaMatrici(nomeMatrice , nuovaMatrice.clone());
-
+        System.out.println("Matrice salvata : "+nomeMatrice);
     }//avvio
 
 
     ///  -----------------------------------------  Inserimento del Input   --------------------------------
-    private String nomeNuovaMatrice() {
-        String nome = terminal.terminaleGetInput("Nome matrice ");
-        if(nome == null || nome.equals("")) {nomeNuovaMatrice();}
-        else { return nome;}
-        return "";
-    }//nomeNuovaMatrice
 
     private int numeroRighe() {
         String numRighe = terminal.terminaleGetInput("Numero righe");

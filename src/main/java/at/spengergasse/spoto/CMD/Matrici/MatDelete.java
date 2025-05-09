@@ -1,3 +1,12 @@
+/*
+    Autore  : SPOTO Giorgio
+    Classe  : 6A CIF
+    Ver     : 1.0.0
+    del     : 2025-05-06
+
+    Cancella Matrice dalla Memoria
+ */
+
 package at.spengergasse.spoto.CMD.Matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
@@ -6,9 +15,9 @@ import at.spengergasse.spoto.Terminale;
 
 import java.util.Map;
 
-public class Delete extends CMDBase {
+public class MatDelete extends CMDBase {
 
-    public Delete(Terminale terminal) {
+    public MatDelete(Terminale terminal) {
         super(terminal);
     }
 
@@ -16,16 +25,11 @@ public class Delete extends CMDBase {
     public void avvio() {
         if(!super.controllaPK()){return;}
 
-        String nomeMatrice = terminal.terminaleGetInput("Nome della Matrice da cancellare");
-        VarMatrice printMatrice ;
-
-        if(nomeMatrice == null || nomeMatrice.equals("")){
-            avvio();
-            return;
-        }
+        String nomeMatrice = super.inputString("Nome della Matrice da cancellare");
 
         Map matrici = terminal.getMappaMatrici();
         matrici.remove(nomeMatrice);
+        System.out.println("Matrice cancelalta : "+nomeMatrice);
     }//avvio
 
     @Override
