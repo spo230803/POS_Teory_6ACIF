@@ -45,8 +45,14 @@ public class ExeException extends Exception {
 
     @Override
     public String getMessage() {
-        return "Si è verificato un Errore : " + super.getMessage();
-    }
+        if(super.getMessage() == null){
+            return "!! SYSTEM ERROR !! \n Messaggio Exceptio non trovato!";
+        } else if (super.getMessage().startsWith("Si è verificato un Errore : ")) {
+            return super.getMessage();
+        }else {
+            return "Si è verificato un Errore : " + super.getMessage();
+        }
+    }//getMessate
 
 
     private void salvaLog(){

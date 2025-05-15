@@ -74,6 +74,9 @@ public class VarMatrice implements Cloneable{
             BufferedReader matriceBufferedReader = new BufferedReader(matriceFileReader);
             String linea;
             while((linea = matriceBufferedReader.readLine()) != null){
+                linea  = linea.trim();
+                if(linea.equals("")){ continue;} //Salto le line Vuote
+
                 //Leggo il File Riga per Riga
                 String[] valore = linea.split(terminale.getSeparaValoreMarice());
                 ArrayList<Integer> riga = new ArrayList<>();

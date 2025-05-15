@@ -1,40 +1,13 @@
-2025-05-06 10:07:02#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (DFKLASDJFLSA)
-2025-05-06 10:08:01#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (DFADSA)
-2025-05-06 10:11:14#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : Non è un File! (C:\)
-2025-05-06 10:11:32#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (C:\KJDFKLSAJ)
-2025-05-06 10:12:53#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (D)
-2025-05-06 10:39:40#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : Non è un File! (C:\)
-2025-05-06 10:39:54#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (G:\)
-2025-05-06 12:16:42#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (A)
-2025-05-06 12:18:06#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : Non è un File! (C:\)
-2025-05-06 12:23:17#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (DD)
-2025-05-06 12:26:06#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (HTTPS://DUCKDUCKGO.COM/?KP=-2&KAV=1&K1=-1&KAY=B&KAJ=M&KAK=-1&KAX=-1&KAO=-1&KAU=-1&KAE=T&KG=P&K5=1&Q=5)
-2025-05-06 12:45:25#at.spengergasse.spoto.CMD.Matrici.Print#avvio#Si è verificato un Errore : Cannot invoke "at.spengergasse.spoto.Libreria.VarMatrice.toString()" because the return value of "java.util.Map.get(Object)" is null
-2025-05-06 12:46:16#at.spengergasse.spoto.CMD.Matrici.Print#avvio#Si è verificato un Errore : Cannot invoke "at.spengergasse.spoto.Libreria.VarMatrice.toString()" because the return value of "java.util.Map.get(Object)" is null
-2025-05-06 17:01:54#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : Non è un File! (C:)
-2025-05-07 22:36:10#at.spengergasse.spoto.Libreria.VarMatrice#setValore x=0 y=0 valore=1#Si è verificato un Errore : Index 0 out of bounds for length 0
-2025-05-07 22:44:32#at.spengergasse.spoto.Libreria.VarMatrice#setValore x=0 y=0 valore=0#Si è verificato un Errore : Index 0 out of bounds for length 0
-2025-05-07 23:22:11#at.spengergasse.spoto.Libreria.VarMatrice#setValore r=0 c=0 valore=0#Si è verificato un Errore : Index 0 out of bounds for length 0
-2025-05-08 08:59:30#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : Cannot invoke "at.spengergasse.spoto.Terminale.getSeparaValoreMarice()" because "this.terminale" is null
-2025-05-08 09:01:31#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : La Matrice ha un valore non valido : 1,2,3
-2025-05-08 09:01:31#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : Si è verificato un Errore : La Matrice ha un valore non valido : 1,2,3
-2025-05-08 09:44:29#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : La Matrice ha un valore non valido : A
-2025-05-08 09:44:29#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : Si è verificato un Errore : La Matrice ha un valore non valido : A
-2025-05-08 09:45:59#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : La Matrice non ha per riga gli stesi valori!
-2025-05-08 11:06:21#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
-2025-05-08 11:42:13#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : La Matrice ha un valore non valido : 1,2,3
-2025-05-08 11:42:13#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : Si è verificato un Errore : La Matrice ha un valore non valido : 1,2,3
-2025-05-08 11:48:32#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
-2025-05-09 20:27:17#at.spengergasse.spoto.Libreria.VarGrafico#addPunto - put#Si è verificato un Errore : Cannot invoke "java.util.Map.containsKey(Object)" because "this.grafico" is null
-2025-05-09 20:33:16#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
-2025-05-09 20:38:11#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
-2025-05-09 20:50:02#at.spengergasse.spoto.Libreria.VarGrafico#controllaGrafico#Si è verificato un Errore : Il Punto [ALFA] ha un colegamento con puntoFK non valdio : BETA
-2025-05-09 20:52:09#at.spengergasse.spoto.Libreria.VarGrafico#controllaGrafico#Si è verificato un Errore : Il Punto [BETA] ha un colegamento con puntoFK non valdio : GAMMA
-2025-05-09 21:01:17#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
-2025-05-09 21:02:05#at.spengergasse.spoto.Libreria.VarGrafico#controllaGrafico#Si è verificato un Errore : Connessione non simmetrica: [ALFA] è collegato a [BETA], ma [BETA] non è collegato a [ALFA]
-2025-05-09 21:02:46#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
-2025-05-12 07:26:16#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
-2025-05-15 10:26:46#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
-2025-05-15 10:29:29#at.spengergasse.spoto.Libreria.VarGrafico#controllaGrafico#Si è verificato un Errore : Connessione non simmetrica: [CHIRS] è collegato a [BETA], ma [BETA] non è collegato a [CHIRS]
-2025-05-15 10:30:32#at.spengergasse.spoto.Libreria.VarGrafico#controllaGrafico#Si è verificato un Errore : Connessione non simmetrica: [B] è collegato a [C], ma [C] non è collegato a [B]
-2025-05-15 10:30:41#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-05-15 12:19:46#at.spengergasse.spoto.Libreria.VarGrafico#addColegamento - Input#puntoID non Trovato ( B )
+2025-05-15 12:19:46#at.spengergasse.spoto.Libreria.VarGrafico#addColegamento - add#puntoID non Trovato ( B )
+2025-05-15 12:19:46#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - Errore Lettura File#puntoID non Trovato ( B )
+2025-05-15 12:22:53#at.spengergasse.spoto.Libreria.VarGrafico#addColegamento - Input#Si è verificato un Errore : puntoID non Trovato ( B )
+2025-05-15 12:22:53#at.spengergasse.spoto.Libreria.VarGrafico#addColegamento - add#Si è verificato un Errore : puntoID non Trovato ( B )
+2025-05-15 12:22:53#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - Errore Lettura File#Si è verificato un Errore : puntoID non Trovato ( B )
+2025-05-15 12:26:17#at.spengergasse.spoto.Libreria.VarGrafico#addPunto#Si è verificato un Errore : puntoID già Presente
+2025-05-15 12:26:17#at.spengergasse.spoto.Libreria.VarGrafico#addPunto - put#Si è verificato un Errore : puntoID già Presente
+2025-05-15 12:26:17#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - Errore Lettura File#Si è verificato un Errore : puntoID già Presente
+2025-05-15 12:29:49#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-05-15 12:30:11#at.spengergasse.spoto.Libreria.VarGrafico#addPunto#Si è verificato un Errore : puntoID già Presente (B)
+2025-05-15 12:30:11#at.spengergasse.spoto.Libreria.VarGrafico#addPunto - put#Si è verificato un Errore : puntoID già Presente (B)
+2025-05-15 12:30:11#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - Errore Lettura File#Si è verificato un Errore : puntoID già Presente (B)

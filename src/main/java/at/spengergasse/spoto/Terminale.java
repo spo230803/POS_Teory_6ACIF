@@ -57,6 +57,7 @@ public class Terminale {
         mappaComandi.put("GRA_ADD_MANUAL", GrafAddManual.class);
         mappaComandi.put("GRA_DELETE", GrafDelete.class);
         mappaComandi.put("GRA_PRINT", GrafPrint.class);
+        mappaComandi.put("GRA_CALC_DIST", GraCaclolaDistanza.class);
 
         //Gestione Matrici
         mappaComandi.put("MAT_ADD" , MatAdd.class );

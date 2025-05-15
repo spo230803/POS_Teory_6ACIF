@@ -20,7 +20,7 @@ public class Exit extends CMDBase {
     @Override
     public void avvio() {
         System.out.println("Chiusura del programma in corso ...");
-        System.exit(+1);
+        System.exit(0);
     }
 
     @Override

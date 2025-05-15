@@ -8,27 +8,52 @@
 
     Il file deve essere formanto con
 
-    IDpunto, FKpuntoColegamento_1 ,FKpuntoColegamento_2...
+    IDpunto, FKpuntoColegamento_1  , peso_1 ,FKpuntoColegamento_2, peso_1
  */
 
 package at.spengergasse.spoto.CMD.Grafico;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
+import at.spengergasse.spoto.Libreria.ExeException;
+import at.spengergasse.spoto.Libreria.VarGrafico;
 import at.spengergasse.spoto.Terminale;
 
+import java.util.concurrent.ExecutionException;
+
 public class GrafAdd extends CMDBase {
+
+    VarGrafico nuovoGrafico;
+    boolean graficoConPesi;
+
     public GrafAdd(Terminale terminal) {
         super(terminal);
     }
 
     @Override
     public void avvio() {
-        System.out.println("VBGIO : Da implementare");
-    }
+        //inpiut
+        String nomeGrafico = super.inputString("Nome grafico");
+        graficoConPesi = (super.inputInteger("Il grafico ha un peso? 0 = No | <> 0 Si") == 0 ? false : true);
+        String nomeFile = super.inputString("Inserire il Perscorso del File del grafico");
+
+        //Creo la Variabile con il Nuovo Grafico
+        nuovoGrafico = new VarGrafico( this.terminal,nomeGrafico , graficoConPesi);
+
+        try{
+            nuovoGrafico.caricaGraficDaFile(nomeFile , nomeGrafico , graficoConPesi );
+        } catch (ExeException e) {
+            System.out.println(e.getMessage());
+        }
+
+        terminal.addMappaGrafico(nomeGrafico , nuovoGrafico.clone());
+        System.out.println("Grfico caricato correttamente ("+nomeGrafico+")");
+    }//avvio
+
 
     @Override
     public void help() {
         System.out.println("Aggiunta in memoria di un Grafico da File");
-        System.out.println("Il file devve avere questo formato : Punto, coleamento,coleamento ... (un punto per riga)");
-    }
-}
+        System.out.println("CON PESI : Il File devev avere questo formato  : IDpunto ; FKpuntoColegamento_1 ; peso_1 ,FKpuntoColegamento_2 ; peso_1 ; ... ");
+        System.out.println("SENZA PESI : Il File devev avere questo formato  : IDpunto ; FKpuntoColegamento_1 ; FKpuntoColegamento_2 ; ...  ");
+    }//help
+}//

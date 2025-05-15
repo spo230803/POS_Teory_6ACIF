@@ -31,14 +31,8 @@ public class MatAdd extends CMDBase {
         if(!super.controllaPK()){return;}
 
 
-        String nomeMatrice =  super.inputString("Nome della Matrice");
-        String fileMatrice =  terminal.terminaleGetInput("Inserire file della Matrice");
-
-        if (fileMatrice == null || fileMatrice.isEmpty()) {
-            System.out.println("File della Matrice non valido");
-            avvio();
-            return;
-        }
+        String nomeMatrice = super.inputString("Nome della Matrice");
+        String fileMatrice = super.inputString("Inserire file della Matrice");
 
         //Creo la Matirce
         matrice = new VarMatrice(terminal , nomeMatrice);
