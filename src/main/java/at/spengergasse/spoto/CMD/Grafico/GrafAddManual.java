@@ -13,10 +13,14 @@ import at.spengergasse.spoto.Libreria.ExeException;
 import at.spengergasse.spoto.Libreria.VarGrafico;
 import at.spengergasse.spoto.Terminale;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class GrafAddManual extends CMDBase {
 
     //Variabili di Instanza
     VarGrafico nuovoGrafico;
+    boolean graficoConPesi;
 
     public GrafAddManual(Terminale terminal) {
         super(terminal);
@@ -25,30 +29,49 @@ public class GrafAddManual extends CMDBase {
 
     @Override
     public void avvio() {
-        if(!super.controllaPK()){return;}
+        if (!super.controllaPK()) {
+            return;
+        }
 
         //Variabili
         String nomeGarfico = super.inputString("Nome del garfico");
         Integer numeroPunti = super.inputInteger("Numero dei punti");
+        graficoConPesi = (super.inputInteger("Il grafico ha un peso? 0 = No | <> 0 Si") == 0 ? false : true);
 
-        nuovoGrafico = new VarGrafico(nomeGarfico);
+        if(graficoConPesi){
+            System.out.println("Graficio impostato CON Pesi");
+            nuovoGrafico = new VarGrafico(nomeGarfico, true);
+        }else {
+            System.out.println("Graficio impostato SENZA Peso");
+            nuovoGrafico = new VarGrafico(nomeGarfico, false);
+        }
 
-        for(int i = 1; i <= numeroPunti; i++){
-            String puntoNome = super.inputString("Inserire il nome del Punto ["+i+" di "+numeroPunti+"] ");
-            Integer numeroColegamenti = super.inputInteger("Inserire il numero de colegamenti per il punto "+puntoNome);
-            try {
+        try{
+            for (int i = 1; i <= numeroPunti; i++) {
+                String puntoNome = super.inputString("Inserire il nome del Punto [" + i + " di " + numeroPunti + "] ");
+                Integer numeroColegamenti = super.inputInteger("Inserire il numero de colegamenti per il punto " + puntoNome);
+
                 nuovoGrafico.addPunto(puntoNome);
-                for(int j = 1; j <= numeroColegamenti; j++){
-                    String colegantoPK = super.inputString("Inserire il nome dei Punti collegati ["+j+" di "+numeroColegamenti+"] con il Punto "+puntoNome);
-                    nuovoGrafico.addColegamento(puntoNome, colegantoPK);
-                }//for colegamenti
+                Map<String, Integer> colegamenti = new HashMap<String, Integer>();
 
-                //Funzone per la verifica del grafico
-            }catch(ExeException e ){
-                System.out.println(e);
-                return;
-            }
-        }//For Punti
+                for (int j = 1; j <= numeroColegamenti; j++) {
+                    String puntoCollegato = super.inputString("Inserire il Nome del  punto collegato [" + j + " di " + numeroColegamenti + "] per il punto  "+ puntoNome);
+                    Integer peso;
+                    if (graficoConPesi) {
+                        peso = super.inputInteger("Inserire il peso del colegamento del punto " + puntoCollegato);
+                    } else {
+                        peso = 1;
+                    }
+
+                    colegamenti.put(puntoCollegato, peso);
+
+                }//For Colegamenti
+                nuovoGrafico.addColegamento(puntoNome , colegamenti);
+            }//For Punti
+        }catch(ExeException e ){
+            System.out.println(e);
+            return;
+        }
 
         try{
             nuovoGrafico.controllaGrafico();

@@ -64,6 +64,8 @@ public class Terminale {
         mappaComandi.put("MAT_ADD_MANUAL" , MatAddManual.class);
         mappaComandi.put("MAT_DELETE" , MatDelete.class);
         mappaComandi.put("MAT_LIST" , MatList.class );
+        mappaComandi.put("MAP_ADD_GRAFICO",MatAddDaGrafico.class );
+
     }//Terminale
 
     public void avvioProgramma(){

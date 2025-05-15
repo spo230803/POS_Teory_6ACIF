@@ -27,7 +27,7 @@ public class VarMatrice implements Cloneable{
     private ArrayList<ArrayList<Integer>> matriceDati = new ArrayList<>(); //Array multivettoriale [R - Riga][C - Colonna]
     private String matriceNome;
     private Terminale terminale;
-
+    private VarGrafico graficDati;
 
 
     //Costruttori
@@ -159,13 +159,15 @@ public class VarMatrice implements Cloneable{
         strRetrun.append("\n");
         strRetrun.append("Matrice Nome : " + getMatriceNome() + "\n");
         strRetrun.append("\n");
-        for (ArrayList<Integer> riga : matriceDati) {
-            for (Integer i : riga) {
-                strRetrun.append(i).append("\t");
-            }
-            strRetrun.append("\n");
-        }
 
+        if(graficDati == null) { //la matrice non dervia da un Grafico
+            for (ArrayList<Integer> riga : matriceDati) {
+                for (Integer i : riga) {
+                    strRetrun.append(i).append("\t");
+                }
+                strRetrun.append("\n");
+            }
+        }
         strRetrun.append("--------------------");
 
         return strRetrun.toString();
