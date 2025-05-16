@@ -11,3 +11,4 @@
 2025-05-15 12:30:11#at.spengergasse.spoto.Libreria.VarGrafico#addPunto#Si è verificato un Errore : puntoID già Presente (B)
 2025-05-15 12:30:11#at.spengergasse.spoto.Libreria.VarGrafico#addPunto - put#Si è verificato un Errore : puntoID già Presente (B)
 2025-05-15 12:30:11#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - Errore Lettura File#Si è verificato un Errore : puntoID già Presente (B)
+2025-05-15 15:12:49#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (GRAFICO.GETGRAFICODATI().GET(I)) 

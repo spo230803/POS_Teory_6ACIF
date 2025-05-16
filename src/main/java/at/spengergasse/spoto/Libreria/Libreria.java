@@ -9,6 +9,10 @@
 
 package at.spengergasse.spoto.Libreria;
 
+import at.spengergasse.spoto.Main;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public  class Libreria {
     public static boolean isInteger(String str) {
         try {
@@ -16,6 +20,20 @@ public  class Libreria {
             return true; // La stringa è un numero intero
         } catch (NumberFormatException e) {
             return false; // La stringa non è un numero intero
+        }
+    } //isInteger
+
+    public static void debug(String str) {
+        if(Main.isDebug){
+            log.debug(str);
+            System.out.println("DEBUG : "+str);
+        }
+    } //debug
+    public static void debug(Object o) {
+        if(o != null) {
+            debug(o.toString());
+        }else {
+            debug("Oject is null");
         }
     }
 }//class

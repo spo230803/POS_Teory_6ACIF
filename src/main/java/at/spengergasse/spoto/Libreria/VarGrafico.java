@@ -18,9 +18,8 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -217,35 +216,39 @@ public class VarGrafico implements Cloneable{
         }
     }//caricaDaFile
 
+    public Set<String> getPunti(){
+        return graficoDati.keySet();
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Stato attuale del grafo:\n");
+        StringBuilder strRetrun = new StringBuilder();
+        strRetrun.append("-------------------------\n");
+        strRetrun.append("Nome del Grafico : "+nomeGrafico+"\n");
 
         for (Map.Entry<String, Map<String, Integer>> entry : graficoDati.entrySet()) {
             String punto = entry.getKey();
             Map<String, Integer> collegamenti = entry.getValue();
 
-            sb.append(punto).append(" -> ");
+            strRetrun.append(punto).append(" -> ");
 
             if (collegamenti.isEmpty()) {
-                sb.append("{}");
+                strRetrun.append("{}");
             } else {
-                sb.append("{");
+                strRetrun.append("{");
                 int count = 0;
                 for (Map.Entry<String, Integer> collegamento : collegamenti.entrySet()) {
-                    sb.append(collegamento.getKey()).append("=").append(collegamento.getValue());
+                    strRetrun.append(collegamento.getKey()).append("=").append(collegamento.getValue());
                     if (++count < collegamenti.size()) {
-                        sb.append(", ");
+                        strRetrun.append(", ");
                     }
                 }
-                sb.append("}");
+                strRetrun.append("}\n");
             }
 
-            sb.append("\n");
         }
-
-        return sb.toString();
+        strRetrun.append("-------------------------");
+        return strRetrun.toString();
     }//toString
 
     @Override

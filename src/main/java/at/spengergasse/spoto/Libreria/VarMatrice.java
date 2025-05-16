@@ -17,10 +17,13 @@ import lombok.Setter;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Set;
+
 import static at.spengergasse.spoto.Libreria.Libreria.isInteger;
 
 @Setter
 @Getter
+
 public class VarMatrice implements Cloneable{
 
     private String fileName; //Origine della Matrice
@@ -153,6 +156,14 @@ public class VarMatrice implements Cloneable{
         matriceDati.add(riga);
     }//createRiga
 
+    public void setMariceVuota(int numRige , int numColonne , int valDefault ) throws ExeException {
+        for(int r = 0 ; r < numRige ; r++){
+            createRiga();
+            for(int c = 0 ; c < numColonne ; c++){
+                addValore(r , valDefault);
+            }//for - colonne
+        }//end for - righe
+    }//setMariceVuota
 
     @Override
     public String toString()   {
@@ -161,18 +172,38 @@ public class VarMatrice implements Cloneable{
         strRetrun.append("--------------------");
         strRetrun.append("\n");
         strRetrun.append("Matrice Nome : " + getMatriceNome() + "\n");
-        strRetrun.append("\n");
 
         if(graficDati == null) { //la matrice non dervia da un Grafico
+            strRetrun.append("(Matrice non da Grafico)\n");
             for (ArrayList<Integer> riga : matriceDati) {
                 for (Integer i : riga) {
                     strRetrun.append(i).append("\t");
                 }
                 strRetrun.append("\n");
             }
-        }
+        }else {
+            strRetrun.append("Matrice dal Grafico "+graficDati.getNomeGrafico()+"\n");
+            String[] listaPunti =  graficDati.getPunti().toArray(new String[0]);
+
+            //Stampa la intestazione in alto
+            for(int i = 0 ; i < listaPunti.length ; i++){
+                if(i==0){strRetrun.append("\t");}
+                strRetrun.append(listaPunti[i]).append("\t");
+            }
+            strRetrun.append("\n");
+            strRetrun.append("______________________");
+            strRetrun.append("\n");
+
+            for(int i = 0 ; i < matriceDati.size() ; i++){
+                strRetrun.append(listaPunti[i]).append("|").append("\t"); //Stampa intestazione per ogni riga
+                for (Integer v : matriceDati.get(i)) {
+                    strRetrun.append(v).append("\t");
+                }
+                strRetrun.append("\n");
+            }
+        }//end if
         strRetrun.append("--------------------");
 
         return strRetrun.toString();
-    }
+    }//toString
 }//VarMatrice

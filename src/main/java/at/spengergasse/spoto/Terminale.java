@@ -140,9 +140,14 @@ public class Terminale {
         cmd(); //Alla fine richiedo di nuovo un comando
     }//cmd
 
-    public int getCountRisutlato(){
+    public Integer getCountRisutlato(){
         countRisutlato++;
         return countRisutlato;
+    }
+
+    public String getNomeRisultato(){
+        Integer countRisutlato = getCountRisutlato();
+        return "R"+countRisutlato.toString();
     }
 
     public void addMappaMatrici(String nomeMatrice, VarMatrice clone) {

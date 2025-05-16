@@ -8,11 +8,22 @@
  */
 package at.spengergasse.spoto.CMD.Grafico;
 
-import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.ExeException;
+import at.spengergasse.spoto.Libreria.*;
 import at.spengergasse.spoto.Terminale;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.MatchResult;
+
 public class GraCaclolaDistanza extends CMDBase {
+
+    //Variabili Istanza
+    VarGrafico grafico;
+    String nomeMatriceReturn = terminal.getNomeRisultato();
+    VarMatrice matriceDistanza = new VarMatrice(nomeMatriceReturn);
+    Map<String, Map<String, Integer>>  graficoDati;
+
 
     public GraCaclolaDistanza(Terminale terminal) {
         super(terminal);
@@ -20,20 +31,87 @@ public class GraCaclolaDistanza extends CMDBase {
 
     @Override
     public void avvio() {
+
+        //Variabili Locali
         String nomeGraficoToMatrice = super.inputString("Nome grafico per il calcolo delle Distanze");
+        final int maxInt = Integer.MAX_VALUE;
+
         try {
-            terminal.getMappaGrafico().get(nomeGraficoToMatrice);
+            grafico =  terminal.getMappaGrafico().get(nomeGraficoToMatrice).clone();
+            Libreria.debug(grafico);
+            matriceDistanza.setGraficDati(grafico);
+
         } catch (Exception e) {
             ExeException errore = new ExeException(this , "ricerca Grafico","Errore nel caricamento grafico ("+nomeGraficoToMatrice+") : "+ e.getMessage() );
             System.out.println(errore);
             return;
         }
 
+        graficoDati = grafico.getGraficoDati();
+        Set<String> elencoPunti = graficoDati.keySet(); // tutti i nodi
+        Map<String, Integer> nomeToIndice = new HashMap<>();
+        Map<Integer, String> indiceToNome = new HashMap<>();
+        int index = 0;
 
+        for (String nome : graficoDati.keySet()) {
+            nomeToIndice.put(nome, index);
+            indiceToNome.put(index, nome);
+            index++;
+        }
+        int V = nomeToIndice.size();
+
+
+        try{
+            //Setto per prima cosa tutta la matrice a 0
+            matriceDistanza.setMariceVuota(elencoPunti.size() , elencoPunti.size() , 0);
+            for(int i = 0 ; i < elencoPunti.size() ; i++){
+                for(int j = 0 ; j < elencoPunti.size() ; j++){
+                    if(i != j) {matriceDistanza.setValore(i, j, maxInt);}
+                }
+            }
+
+            //Aggiorno Matrice con Peso dal Graffico
+            for (Map.Entry<String, Map<String, Integer>> entry : graficoDati.entrySet()) {
+                String da = entry.getKey();
+                int indiceDa = nomeToIndice.get(da);
+
+                for (Map.Entry<String, Integer> collegamento : entry.getValue().entrySet()) {
+                    String a = collegamento.getKey();
+                    int indiceA = nomeToIndice.get(a);
+                    int peso = collegamento.getValue();
+
+                    matriceDistanza.setValore(indiceDa, indiceA, peso);
+                }
+            }
+
+
+            // Algoritmo di Floyd-Warshall
+            for (int k = 0; k < V; k++) {
+                for (int i = 0; i < V; i++) {
+                    for (int j = 0; j < V; j++) {
+                        int dik = matriceDistanza.getValore(i, k);
+                        int dkj = matriceDistanza.getValore(k, j);
+                        int dij = matriceDistanza.getValore(i, j);
+
+                        if (dik != maxInt && dkj != maxInt && dij > dik + dkj) {
+                            matriceDistanza.setValore(i, j, dik + dkj);
+                        }
+                    }//for J
+                }//for I
+            }//for K
+        }catch (ExeException e){
+            System.out.println(e);
+            return;
+        }
+
+        terminal.addMappaMatrici(nomeMatriceReturn , matriceDistanza.clone());
+
+        System.out.println("Matrice distanza createa con successo ("+nomeMatriceReturn+")");
     }//avvio
 
     @Override
     public void help() {
-        System.out.println("Calcolo delle Distanze da un grafico - Restituisce una Matrice");
+        System.out.println("Calcolo delle Distanze da un grafico - Salva il risutato in una Matrice");
+        System.out.println("Utilizzo del Argoritmo : Floyd-Warshall");
     }//help
 }//GraCreateMatrix

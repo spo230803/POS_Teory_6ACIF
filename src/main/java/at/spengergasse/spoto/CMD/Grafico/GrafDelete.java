@@ -22,16 +22,12 @@ public class GrafDelete extends CMDBase {
     @Override
     public void avvio() {
         if(!super.controllaPK()){return;}
-        String nome = terminal.terminaleGetInput("Nome del Grafico da cancellare");
+        String nomeGrafico = terminal.terminaleGetInput("Nome del Grafico da cancellare");
 
-        if(nome == null || nome.equals("")){
-            avvio();
-            return;
-        }
 
         Map grafico = terminal.getMappaMatrici();
-        grafico.remove(nome);
-        System.out.println("Grafico cancellato : " + grafico);
+        grafico.remove(nomeGrafico);
+        System.out.println("Grafico cancellato : " + nomeGrafico);
     }//avvio
 
     @Override
