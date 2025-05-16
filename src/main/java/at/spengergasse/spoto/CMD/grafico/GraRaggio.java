@@ -10,18 +10,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GraRaggio extends CMDBase {
+
+    //Variabili di Instanza
+    String returnNomePunti;
+    VarPunti puntiDati = new VarPunti(terminal , "Raggio");
+    String nomeGrafico;
+
     public GraRaggio(Terminale terminal) {
         super(terminal);
     }
 
     @Override
     public void avvio() {
+        nomeGrafico = super.inputString("Nome grafico: ");
+        System.out.println("Grafico ("+nomeGrafico+") Radius : "+calcola(nomeGrafico));
+    }//avvio
 
-        //Variabli Locali
+    public int calcola(String nomeGrafico){
+        if(!super.controllaPK()){return -1;}
         GraEscentricita escentricita = new GraEscentricita(terminal);
-        String returnNomePunti;
-        VarPunti puntiDati = new VarPunti(terminal , "Raggio");
-        String nomeGrafico = super.inputString("Nome grafico: ");
         int minRadio = Integer.MAX_VALUE;
 
         //Estrago per prima cosa la escentricita
@@ -38,8 +45,9 @@ public class GraRaggio extends CMDBase {
                 minRadio = entry.getValue();
             }
         }
-        System.out.println("Grafico ("+nomeGrafico+") Radius : "+minRadio);
-    }//avvio
+
+        return minRadio;
+    }//calcola
 
     @Override
     public void help() {
