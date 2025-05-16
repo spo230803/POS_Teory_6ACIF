@@ -6,7 +6,7 @@
 
     Aggiunta Manuale di un Grafico
 */
-package at.spengergasse.spoto.CMD.Grafico;
+package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.ExeException;
@@ -81,7 +81,7 @@ public class GrafAddManual extends CMDBase {
         }
 
         //Tutto a Posto salvo il Grafico
-        terminal.addMappaGrafico(nomeGarfico , nuovoGrafico.clone());
+        terminal.addPoolGrafico(nomeGarfico , nuovoGrafico.clone());
         System.out.println("Grafico creato com sucesso ("+nomeGarfico+")");
     }//avvio
 

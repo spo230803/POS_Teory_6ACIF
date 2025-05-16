@@ -7,10 +7,9 @@
     Cancella Matrice dalla Memoria
  */
 
-package at.spengergasse.spoto.CMD.Matrici;
+package at.spengergasse.spoto.CMD.matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
 
 import java.util.Map;
@@ -27,7 +26,7 @@ public class MatDelete extends CMDBase {
 
         String nomeMatrice = super.inputString("Nome della Matrice da cancellare");
 
-        Map matrici = terminal.getMappaMatrici();
+        Map matrici = terminal.getPoolMatrici();
         matrici.remove(nomeMatrice);
         System.out.println("Matrice cancelalta : "+nomeMatrice);
     }//avvio

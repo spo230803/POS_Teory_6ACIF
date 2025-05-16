@@ -1,4 +1,4 @@
-package at.spengergasse.spoto.CMD.Grafico;
+package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.ExeException;
@@ -15,9 +15,9 @@ public class GrafPrint extends CMDBase {
         String nome = super.inputString("Nome del Grafico da stampare");
         VarGrafico printGrafico;
         try{
-            printGrafico = terminal.getMappaGrafico().get(nome);
+            printGrafico = terminal.getPoolGrafico().get(nome);
         }catch(Exception e){
-            ExeException errore = new ExeException(this , "getMappaGrafico", e.getMessage());
+            ExeException errore = new ExeException(this , "getPoolGrafico", e.getMessage());
             System.out.println(errore);
             return;
         }

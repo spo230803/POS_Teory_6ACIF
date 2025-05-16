@@ -24,7 +24,7 @@ import static at.spengergasse.spoto.Libreria.Libreria.isInteger;
 @Setter
 @Getter
 
-public class VarMatrice implements Cloneable{
+public class VarMatrice extends VarBase{
 
     private String fileName; //Origine della Matrice
     private ArrayList<ArrayList<Integer>> matriceDati = new ArrayList<>(); //Array multivettoriale [R - Riga][C - Colonna]

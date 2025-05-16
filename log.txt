@@ -12,3 +12,5 @@
 2025-05-15 12:30:11#at.spengergasse.spoto.Libreria.VarGrafico#addPunto - put#Si è verificato un Errore : puntoID già Presente (B)
 2025-05-15 12:30:11#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - Errore Lettura File#Si è verificato un Errore : puntoID già Presente (B)
 2025-05-15 15:12:49#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (GRAFICO.GETGRAFICODATI().GET(I)) 
+2025-05-16 13:19:09#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (GRA_EXZENTR) 
+2025-05-16 15:53:32#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma

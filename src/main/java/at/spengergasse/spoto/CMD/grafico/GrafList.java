@@ -7,7 +7,7 @@
     Lista di tutti i Grafici in Memoria
  */
 
-package at.spengergasse.spoto.CMD.Grafico;
+package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
@@ -23,7 +23,7 @@ public class GrafList extends CMDBase {
     @Override
     public void avvio() {
         if(!super.controllaPK()){return;}
-        ArrayList<String> listaNomeGraffico = new ArrayList<>(terminal.getMappaGrafico().keySet());
+        ArrayList<String> listaNomeGraffico = new ArrayList<>(terminal.getPoolGrafico().keySet());
         Collections.sort(listaNomeGraffico);
 
 

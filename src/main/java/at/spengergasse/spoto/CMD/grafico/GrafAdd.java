@@ -11,14 +11,12 @@
     IDpunto, FKpuntoColegamento_1  , peso_1 ,FKpuntoColegamento_2, peso_1
  */
 
-package at.spengergasse.spoto.CMD.Grafico;
+package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.ExeException;
 import at.spengergasse.spoto.Libreria.VarGrafico;
 import at.spengergasse.spoto.Terminale;
-
-import java.util.concurrent.ExecutionException;
 
 public class GrafAdd extends CMDBase {
 
@@ -45,7 +43,7 @@ public class GrafAdd extends CMDBase {
             System.out.println(e.getMessage());
         }
 
-        terminal.addMappaGrafico(nomeGrafico , nuovoGrafico.clone());
+        terminal.addPoolGrafico(nomeGrafico , nuovoGrafico.clone());
         System.out.println("Grfico caricato correttamente ("+nomeGrafico+")");
     }//avvio
 

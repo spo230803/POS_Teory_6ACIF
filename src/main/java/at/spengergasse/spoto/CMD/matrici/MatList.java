@@ -7,7 +7,7 @@
     Lista di tutte le Matrici salvate
  */
 
-package at.spengergasse.spoto.CMD.Matrici;
+package at.spengergasse.spoto.CMD.matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
@@ -23,7 +23,7 @@ public class MatList extends CMDBase {
     @Override
     public void avvio() {
         if(!super.controllaPK()){return;}
-        ArrayList<String> listaChiave = new ArrayList<>(terminal.getMappaMatrici().keySet());
+        ArrayList<String> listaChiave = new ArrayList<>(terminal.getPoolMatrici().keySet());
         Collections.sort(listaChiave);
 
         System.out.println("------------");

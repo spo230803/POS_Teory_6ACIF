@@ -1,7 +1,7 @@
 /*
     Autore  : SPOTO Giorgio Matteo
     Classe  : 6A CIF
-    Ver     : 1.1.0
+    Ver     : 1.1.1
     del     : 2025-05-15
 
     Classe per la memorizazione del Grafico
@@ -13,17 +13,15 @@ package at.spengergasse.spoto.Libreria;
 import at.spengergasse.spoto.Terminale;
 import lombok.Getter;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Getter
 @Setter
-public class VarGrafico implements Cloneable{
+public class VarGrafico extends VarBase{
 
     private Terminale terminale;
     private String nomeGrafico;

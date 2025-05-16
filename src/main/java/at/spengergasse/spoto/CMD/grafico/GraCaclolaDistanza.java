@@ -4,9 +4,9 @@
     Ver     : 1.0.0
     del     : 2025-05-06
 
-    Da grafico a Matrice con i relativi Pesi
+    Da grafico a Matrice caclcolando la distanza
  */
-package at.spengergasse.spoto.CMD.Grafico;
+package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.*;
 import at.spengergasse.spoto.Terminale;
@@ -14,7 +14,6 @@ import at.spengergasse.spoto.Terminale;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.MatchResult;
 
 public class GraCaclolaDistanza extends CMDBase {
 
@@ -34,17 +33,35 @@ public class GraCaclolaDistanza extends CMDBase {
 
         //Variabili Locali
         String nomeGraficoToMatrice = super.inputString("Nome grafico per il calcolo delle Distanze");
+
+        try{
+            calcola(nomeGraficoToMatrice);
+        }catch (ExeException e) {
+            System.out.println(e);
+        }
+
+        System.out.println("Matrice distanza createa con successo ("+nomeMatriceReturn+")");
+        System.out.println(matriceDistanza);
+    }//avvio
+
+    public String calcola(String parNomeGrafico) throws ExeException {
+        //Funzone per il popolamento della Matrice
+        //      PARAMETRI
+        // parNomeGrafico   Nome del grafico da calcolare la Matrice
+        //
+        //      RETRUN
+        // nomeMatriceReturn = Nome della matrice Creata che è stata salvata nel Pool nel Terminale (Oggetto)
+
         final int maxInt = Integer.MAX_VALUE;
 
         try {
-            grafico =  terminal.getMappaGrafico().get(nomeGraficoToMatrice).clone();
+            grafico =  terminal.getPoolGrafico().get(parNomeGrafico).clone();
             Libreria.debug(grafico);
             matriceDistanza.setGraficDati(grafico);
 
         } catch (Exception e) {
-            ExeException errore = new ExeException(this , "ricerca Grafico","Errore nel caricamento grafico ("+nomeGraficoToMatrice+") : "+ e.getMessage() );
-            System.out.println(errore);
-            return;
+            ExeException errore = new ExeException(this , "ricerca Grafico","Errore nel caricamento grafico ("+parNomeGrafico+") : "+ e.getMessage() );
+            throw errore;
         }
 
         graficoDati = grafico.getGraficoDati();
@@ -100,14 +117,13 @@ public class GraCaclolaDistanza extends CMDBase {
                 }//for I
             }//for K
         }catch (ExeException e){
-            System.out.println(e);
-            return;
+            throw e;
         }
 
-        terminal.addMappaMatrici(nomeMatriceReturn , matriceDistanza.clone());
-
-        System.out.println("Matrice distanza createa con successo ("+nomeMatriceReturn+")");
-    }//avvio
+        //Salvataggo
+        terminal.addPoolMatrici(nomeMatriceReturn , matriceDistanza.clone());
+        return nomeMatriceReturn;
+    }//calcoloDistanza
 
     @Override
     public void help() {

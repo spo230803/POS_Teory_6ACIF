@@ -7,7 +7,7 @@
     aggiungi da file una Matrice
  */
 
-package at.spengergasse.spoto.CMD.Matrici;
+package at.spengergasse.spoto.CMD.matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.ExeException;
@@ -53,7 +53,7 @@ public class MatAdd extends CMDBase {
             return false;
         }
 
-       terminal.addMappaMatrici(nomeMatrice , matrice.clone());
+       terminal.addPoolMatrici(nomeMatrice , matrice.clone());
 
         return true;
     }//caricaFile

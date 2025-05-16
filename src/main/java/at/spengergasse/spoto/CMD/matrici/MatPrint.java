@@ -8,7 +8,7 @@
  */
 
 
-package at.spengergasse.spoto.CMD.Matrici;
+package at.spengergasse.spoto.CMD.matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.ExeException;
@@ -28,7 +28,7 @@ public class MatPrint extends CMDBase {
         VarMatrice printMatrice ;
 
         try {
-            printMatrice =  terminal.getMappaMatrici().get(nomeMatrice);
+            printMatrice =  terminal.getPoolMatrici().get(nomeMatrice);
         }catch(Exception e){
             ExeException errore = new ExeException(this , "getMappaMatrici", e.getMessage());
             System.out.println(errore);

@@ -7,10 +7,9 @@
     Aggiunta di una matrice da un Graficoo
  */
 
-package at.spengergasse.spoto.CMD.Matrici;
+package at.spengergasse.spoto.CMD.matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.ExeException;
 import at.spengergasse.spoto.Libreria.VarGrafico;
 import at.spengergasse.spoto.Terminale;
 
@@ -28,19 +27,19 @@ public class MatAddDaGrafico extends CMDBase {
 
         if(!super.controllaPK()){return;}
 
-        if(terminal.getMappaGrafico().size() == 0 ){
+        if(terminal.getPoolGrafico().size() == 0 ){
             System.out.println("ERROR : Nessun grafico caricato. Per caricare un grafico usare il comando  GRA_ADD oppure GRA_ADD_MANUAL");
             return;
         }
 
         //Seleziono il Grafico
         nomeGrafico = super.inputString("Nome del grafico");
-        if(terminal.getMappaGrafico().get(nomeGrafico) == null){
+        if(terminal.getPoolGrafico().get(nomeGrafico) == null){
             System.out.println("Graficon non trovato ("+nomeGrafico+")");
             return;
         }//end Esiste Grafico
 
-        grafitoEntrata = terminal.getMappaGrafico().get(nomeGrafico).clone();
+        grafitoEntrata = terminal.getPoolGrafico().get(nomeGrafico).clone();
 
 
 

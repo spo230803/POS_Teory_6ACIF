@@ -6,7 +6,7 @@
 
     Cancella un Grafico dalla Memoria
 */
-package at.spengergasse.spoto.CMD.Grafico;
+package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Terminale;
@@ -25,7 +25,7 @@ public class GrafDelete extends CMDBase {
         String nomeGrafico = terminal.terminaleGetInput("Nome del Grafico da cancellare");
 
 
-        Map grafico = terminal.getMappaMatrici();
+        Map grafico = terminal.getPoolGrafico();
         grafico.remove(nomeGrafico);
         System.out.println("Grafico cancellato : " + nomeGrafico);
     }//avvio

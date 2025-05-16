@@ -10,9 +10,11 @@
 
 package at.spengergasse.spoto;
 
-import at.spengergasse.spoto.CMD.Grafico.*;
-import at.spengergasse.spoto.CMD.Matrici.*;
+import at.spengergasse.spoto.CMD.grafico.*;
+import at.spengergasse.spoto.CMD.matrici.*;
 import at.spengergasse.spoto.CMD.exe.*;
+import at.spengergasse.spoto.CMD.punti.PuntDelete;
+import at.spengergasse.spoto.CMD.punti.PuntPrint;
 import at.spengergasse.spoto.Libreria.*;
 
 import lombok.Getter;
@@ -36,8 +38,9 @@ public class Terminale {
     private int countRisutlato = 0;
 
     private Map<String , Class<? extends CMDBase>> mappaComandi =new HashMap(); //Memorizzo la CLASSE al posto di un Oggeto
-    private Map<String , VarMatrice> mappaMatrici =new HashMap();
-    private Map<String , VarGrafico> mappaGrafico =new HashMap();
+    private Map<String , VarMatrice> poolMatrici =new HashMap();
+    private Map<String , VarGrafico> poolGrafico =new HashMap();
+    private Map<String , VarPunti> poolPunti =new HashMap();
 
 
     public Terminale() {
@@ -58,6 +61,9 @@ public class Terminale {
         mappaComandi.put("GRA_DELETE", GrafDelete.class);
         mappaComandi.put("GRA_PRINT", GrafPrint.class);
         mappaComandi.put("GRA_CALC_DIST", GraCaclolaDistanza.class);
+        mappaComandi.put("GRA_EXZENTR", GraEscentricita.class);
+        mappaComandi.put("GRA_RADIUS", GraRaggio.class);
+        mappaComandi.put("GRA_DURCHMESSER", GraDiametro.class);
 
         //Gestione Matrici
         mappaComandi.put("MAT_ADD" , MatAdd.class );
@@ -66,6 +72,10 @@ public class Terminale {
         mappaComandi.put("MAT_DELETE" , MatDelete.class);
         mappaComandi.put("MAT_LIST" , MatList.class );
         mappaComandi.put("MAP_ADD_GRAFICO",MatAddDaGrafico.class );
+
+        //Gestione Punti
+        mappaComandi.put("PUNT_PRINT", PuntPrint.class);
+        mappaComandi.put("PUNT_DELETE", PuntDelete.class);
 
     }//Terminale
 
@@ -150,8 +160,13 @@ public class Terminale {
         return "R"+countRisutlato.toString();
     }
 
-    public void addMappaMatrici(String nomeMatrice, VarMatrice clone) {
-        this.mappaMatrici.put(nomeMatrice, clone);
+    public void addPoolMatrici(String nomeMatrice, VarMatrice clone) {
+        this.poolMatrici.put(nomeMatrice, clone);
     }
-    public void addMappaGrafico(String nomeGrafico, VarGrafico clone) { this.mappaGrafico.put(nomeGrafico, clone); }
+    public void addPoolGrafico(String nomeGrafico, VarGrafico clone) {
+        this.poolGrafico.put(nomeGrafico, clone);
+    }
+    public void addPoolPunit(String nomePunit, VarPunti clone) {
+        this.poolPunti.put(nomePunit, clone);
+    }
 }//Executive

@@ -7,7 +7,7 @@
     Aggiunta di una matrice manuale
  */
 
-package at.spengergasse.spoto.CMD.Matrici;
+package at.spengergasse.spoto.CMD.matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.ExeException;
@@ -42,7 +42,7 @@ public class MatAddManual extends CMDBase {
             }
         }//for righe
 
-        terminal.addMappaMatrici(nomeMatrice , nuovaMatrice.clone());
+        terminal.addPoolMatrici(nomeMatrice , nuovaMatrice.clone());
         System.out.println("Matrice salvata : "+nomeMatrice);
     }//avvio
 
