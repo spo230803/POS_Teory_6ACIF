@@ -29,9 +29,7 @@ public class GrafAddManual extends CMDBase {
 
     @Override
     public void avvio() {
-        if (!super.controllaPK()) {
-            return;
-        }
+        if (!super.controllaPK()) {return;}
 
         //Variabili
         String nomeGarfico = super.inputString("Nome del garfico");

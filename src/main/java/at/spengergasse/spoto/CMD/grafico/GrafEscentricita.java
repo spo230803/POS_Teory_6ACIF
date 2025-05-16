@@ -13,7 +13,7 @@ import at.spengergasse.spoto.Terminale;
 
 import java.util.*;
 
-public class GraEscentricita extends CMDBase {
+public class GrafEscentricita extends CMDBase {
 
     //Variabili in Istanza
     VarGrafico grafico;
@@ -22,7 +22,7 @@ public class GraEscentricita extends CMDBase {
     String nomeGrafico;
     String nomeReturn = terminal.getNomeRisultato();
 
-    public GraEscentricita(Terminale terminal) {
+    public GrafEscentricita(Terminale terminal) {
         super(terminal);
     }
 
@@ -47,7 +47,7 @@ public class GraEscentricita extends CMDBase {
         // nomeMatriceReturn = Nome della matrice Creata che è stata salvata nel Pool nel Terminale (Oggetto)
         nomeGrafico = parNomeGrafico;
 
-        if(!super.controllaPK()){return null;}
+        if(!super.controllaPK()){throw new PKException(this);}
 
 
         //Carico il Grafico

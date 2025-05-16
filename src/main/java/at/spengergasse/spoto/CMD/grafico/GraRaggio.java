@@ -2,11 +2,10 @@ package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.ExeException;
+import at.spengergasse.spoto.Libreria.PKException;
 import at.spengergasse.spoto.Libreria.VarPunti;
 import at.spengergasse.spoto.Terminale;
-import org.springframework.data.jpa.repository.query.JSqlParserUtils;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class GraRaggio extends CMDBase {
@@ -23,12 +22,18 @@ public class GraRaggio extends CMDBase {
     @Override
     public void avvio() {
         nomeGrafico = super.inputString("Nome grafico: ");
-        System.out.println("Grafico ("+nomeGrafico+") Radius : "+calcola(nomeGrafico));
+
+        try {
+            System.out.println("Grafico ("+nomeGrafico+") Radius : "+calcola(nomeGrafico));
+        } catch (ExeException e) {
+            System.out.println(e);
+        }
+
     }//avvio
 
-    public int calcola(String nomeGrafico){
-        if(!super.controllaPK()){return -1;}
-        GraEscentricita escentricita = new GraEscentricita(terminal);
+    public int calcola(String nomeGrafico) throws ExeException {
+        if(!super.controllaPK()){ throw  new PKException(this);}
+        GrafEscentricita escentricita = new GrafEscentricita(terminal);
         int minRadio = Integer.MAX_VALUE;
 
         //Estrago per prima cosa la escentricita

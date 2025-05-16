@@ -30,6 +30,7 @@ public class ExeException extends Exception {
     private String oggetto = INGOTO;
 
 
+
     public ExeException(String zona, String message) {
         super(message);
         setZona( zona);
@@ -42,6 +43,10 @@ public class ExeException extends Exception {
         setOggetto( oggetto);
         salvaLog();
     }//Costruttore 2
+    public ExeException(Object oggetto , String message) {
+        super(message);
+        setOggetto( oggetto);
+    }
 
     @Override
     public String getMessage() {

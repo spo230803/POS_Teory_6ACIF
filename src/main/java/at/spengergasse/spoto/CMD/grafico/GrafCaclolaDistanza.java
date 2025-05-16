@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class GraCaclolaDistanza extends CMDBase {
+public class GrafCaclolaDistanza extends CMDBase {
 
     //Variabili Istanza
     VarGrafico grafico;
@@ -24,7 +24,7 @@ public class GraCaclolaDistanza extends CMDBase {
     Map<String, Map<String, Integer>>  graficoDati;
 
 
-    public GraCaclolaDistanza(Terminale terminal) {
+    public GrafCaclolaDistanza(Terminale terminal) {
         super(terminal);
     }
 
@@ -51,6 +51,10 @@ public class GraCaclolaDistanza extends CMDBase {
         //
         //      RETRUN
         // nomeMatriceReturn = Nome della matrice Creata che è stata salvata nel Pool nel Terminale (Oggetto)
+
+        if(!super.controllaPK()){
+            throw new PKException(this);
+        }
 
         final int maxInt = Integer.MAX_VALUE;
 

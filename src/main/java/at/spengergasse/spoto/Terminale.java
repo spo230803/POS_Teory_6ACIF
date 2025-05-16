@@ -13,9 +13,8 @@ package at.spengergasse.spoto;
 import at.spengergasse.spoto.CMD.grafico.*;
 import at.spengergasse.spoto.CMD.matrici.*;
 import at.spengergasse.spoto.CMD.exe.*;
-import at.spengergasse.spoto.CMD.punti.PuntDelete;
-import at.spengergasse.spoto.CMD.punti.PuntPrint;
 import at.spengergasse.spoto.Libreria.*;
+import at.spengergasse.spoto.CMD.punti.*;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -60,10 +59,11 @@ public class Terminale {
         mappaComandi.put("GRA_ADD_MANUAL", GrafAddManual.class);
         mappaComandi.put("GRA_DELETE", GrafDelete.class);
         mappaComandi.put("GRA_PRINT", GrafPrint.class);
-        mappaComandi.put("GRA_CALC_DIST", GraCaclolaDistanza.class);
-        mappaComandi.put("GRA_EXZENTR", GraEscentricita.class);
+        mappaComandi.put("GRA_CALC_DIST", GrafCaclolaDistanza.class);
+        mappaComandi.put("GRA_EXZENTR", GrafEscentricita.class);
         mappaComandi.put("GRA_RADIUS", GraRaggio.class);
-        mappaComandi.put("GRA_DURCHMESSER", GraDiametro.class);
+        mappaComandi.put("GRA_DURCHMESSER", GrafDiametro.class);
+        mappaComandi.put("GAR_ZENTRUM", GrafCentro.class);
 
         //Gestione Matrici
         mappaComandi.put("MAT_ADD" , MatAdd.class );
