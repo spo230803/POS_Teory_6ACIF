@@ -9,23 +9,62 @@
 
 package at.spengergasse.spoto.CMD.grafico;
 
-import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.ExeException;
-import at.spengergasse.spoto.Libreria.PKException;
+import at.spengergasse.spoto.Libreria.*;
 import at.spengergasse.spoto.Terminale;
 
 public class GrafCentro extends CMDBase {
+
+    //Variabilio Istanza
+    private VarPunti puntiDatiOrigini, puntiDatiReturn;
+    private String returnNomeVar = terminal.getNomeRisultato();
+
+
     public GrafCentro(Terminale terminal) {
         super(terminal);
     }
 
     @Override
     public void avvio() {
+        String nomeGrafico = super.inputString("Nome grafico: ");
 
+        try{
+            calcola(nomeGrafico);
+        }catch(ExeException e){
+            System.out.println(e);
+        }
+
+        System.out.println("Cetnro calcolato corettamento e salvato in : "+returnNomeVar+"");
     }//avvio
 
-    public void calcola(String nomeGrafico) throws ExeException {
+    public String calcola(String nomeGrafico) throws ExeException {
         if(!super.controllaPK()){ throw new PKException(this);}
+
+        //Variabili locale
+        VarGrafico grafio = terminal.getPoolGrafico().get(nomeGrafico);
+        GrafEscentricita escentricita = new GrafEscentricita(terminal);
+        GraRaggio raggio = new GraRaggio(terminal);
+        puntiDatiReturn = new VarPunti(terminal , grafio , "Centro");
+        int raggioVal;
+
+        //Calcolo dei Punti e del Raggio
+        try{
+            String returnPuntiOrigniali = escentricita.calcola(nomeGrafico);
+            puntiDatiOrigini = terminal.getPoolPunti().get(returnPuntiOrigniali).clone();
+            raggioVal = raggio.calcola(nomeGrafico);
+        } catch (ExeException e) {
+            throw e;
+        }
+
+        for(String puntoOra : puntiDatiOrigini.getPuntiDati().keySet()){
+            if(puntiDatiOrigini.getPuntiDati().get(puntoOra) == raggioVal){
+                puntiDatiReturn.addValore(puntoOra , raggioVal);
+            }
+        }//end for
+
+        Libreria.debug(puntiDatiReturn);
+
+        terminal.addPoolPunit(nomeGrafico, puntiDatiReturn.clone());
+        return returnNomeVar;
     }//calcola
 
     @Override

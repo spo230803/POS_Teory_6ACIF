@@ -25,7 +25,7 @@ public class Main {
     public static final String SETTIING_HELP_CMD = "?";
     public static final int SETTIING_MAX_MATRICE = 30;
 
-    public static boolean isDebug = true;
+    public static boolean isDebug = false;
 
 
     public static void main(String[] args) {

@@ -34,7 +34,7 @@ public class GrafEscentricita extends CMDBase {
         } catch (ExeException e) {
             System.out.println(e);
         }
-        System.out.println("Escentricita calcolata Corettamente ("+nomeReturn+")");
+        System.out.println("Escentricita calcolata Corettamente e salvata in "+nomeReturn+"");
         System.out.println(returnPunti);
     }//avvio
 

@@ -63,7 +63,7 @@ public class Terminale {
         mappaComandi.put("GRA_EXZENTR", GrafEscentricita.class);
         mappaComandi.put("GRA_RADIUS", GraRaggio.class);
         mappaComandi.put("GRA_DURCHMESSER", GrafDiametro.class);
-        mappaComandi.put("GAR_ZENTRUM", GrafCentro.class);
+        mappaComandi.put("GRA_ZENTRUM", GrafCentro.class);
 
         //Gestione Matrici
         mappaComandi.put("MAT_ADD" , MatAdd.class );
@@ -76,6 +76,7 @@ public class Terminale {
         //Gestione Punti
         mappaComandi.put("PUNT_PRINT", PuntPrint.class);
         mappaComandi.put("PUNT_DELETE", PuntDelete.class);
+        mappaComandi.put("PUNT_LIST", PuntList.class);
 
     }//Terminale
 
