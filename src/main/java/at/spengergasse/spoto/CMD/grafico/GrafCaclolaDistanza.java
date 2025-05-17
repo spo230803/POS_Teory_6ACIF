@@ -105,6 +105,7 @@ public class GrafCaclolaDistanza extends CMDBase {
                     String a = collegamento.getKey();
                     int indiceA = nomeToIndice.get(a);
                     int peso = collegamento.getValue();
+                    Libreria.debug(da + " -> "+ a + " : " + peso );
 
                     matriceDistanza.setValore(indiceDa, indiceA, peso);
                 }

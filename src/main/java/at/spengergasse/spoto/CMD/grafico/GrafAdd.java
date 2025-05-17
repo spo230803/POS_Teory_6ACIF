@@ -32,7 +32,8 @@ public class GrafAdd extends CMDBase {
         //inpiut
         if(!super.controllaPK()){return;}
         String nomeGrafico = super.inputString("Nome grafico");
-        graficoConPesi = (super.inputInteger("Il grafico ha un peso? 0 = No | <> 0 Si") == 0 ? false : true);
+        //graficoConPesi = (super.inputInteger("Il grafico ha un peso? 0 = No | <> 0 Si") == 0 ? false : true);
+        graficoConPesi = super.inputBoolean("Il grafico ha un peso?");
         String nomeFile = super.inputString("Inserire il Perscorso del File del grafico");
 
         //Creo la Variabile con il Nuovo Grafico

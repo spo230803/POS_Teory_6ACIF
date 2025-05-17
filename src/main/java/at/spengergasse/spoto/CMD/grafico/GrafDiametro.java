@@ -32,7 +32,7 @@ public class GrafDiametro extends CMDBase {
     public void avvio() {
         nomeGrafico = super.inputString("Nome grafico: ");
         try {
-            System.out.println("Grafico (" + nomeGrafico + ") Radius : " + calcola(nomeGrafico));
+            System.out.println("Grafico (" + nomeGrafico + ") Durchmesser : " + calcola(nomeGrafico));
         }catch(ExeException e) {
             System.out.println(e);
         }

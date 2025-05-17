@@ -37,6 +37,18 @@ public class ClasseBase {
         else{ return Integer.parseInt(num);}
     }//inputInteger
 
+    public boolean inputBoolean(String msg){
+        String bool = inputString(msg +"\t Y or N");
+        if(bool.equals("Y")){
+            return true;
+        }else if(bool.equals("N")){
+            return false;
+        }else {
+            System.out.print("! Input non valido ! \t");
+            return inputBoolean(msg);
+        }
+    }
+
     public boolean controllaPK(){
 
         //Vbgio - implemntare Cripto by MD5

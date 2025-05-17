@@ -26,7 +26,7 @@ public  class Libreria {
     public static void debug(String str) {
         if(Main.isDebug){
             log.debug(str);
-            System.out.println("DEBUG : "+str);
+            System.out.println("DEBUG : \t"+str);
         }
     } //debug
     public static void debug(Object o) {

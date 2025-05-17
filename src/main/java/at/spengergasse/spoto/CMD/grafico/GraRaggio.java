@@ -1,9 +1,6 @@
 package at.spengergasse.spoto.CMD.grafico;
 
-import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.ExeException;
-import at.spengergasse.spoto.Libreria.PKException;
-import at.spengergasse.spoto.Libreria.VarPunti;
+import at.spengergasse.spoto.Libreria.*;
 import at.spengergasse.spoto.Terminale;
 
 import java.util.Map;
@@ -47,6 +44,7 @@ public class GraRaggio extends CMDBase {
 
         //Calcolo del Raggio (Valore Minio)
         for (Map.Entry<String, Integer> entry : puntiDati.getPuntiDati().entrySet()) {
+            Libreria.debug(entry.getValue());
             if(entry.getValue() < minRadio){
                 minRadio = entry.getValue();
             }

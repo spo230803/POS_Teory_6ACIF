@@ -18,3 +18,4 @@
 2025-05-17 07:44:34#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (A;B;4;C;2) 
 2025-05-17 07:49:33#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (A;B;4;C;2) 
 2025-05-17 08:25:30#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (GRA_EXZENTR) 
+2025-05-17 10:02:18#at.spengergasse.spoto.CMD.grafico.GrafCaclolaDistanza#calcola#Si è verificato un Errore : Grafico non trovato : MUCCA
