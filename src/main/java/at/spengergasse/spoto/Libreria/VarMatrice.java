@@ -1,8 +1,8 @@
 /*
     Autore  : SPOTO Giorgio
     Classe  : 6A CIF
-    Ver     : 1.0.0
-    del     : 2025-05-06
+    Ver     : 1.0.1
+    del     : 2025-05-17
 
     Classe per la memorizazione della Matrice
  */
@@ -46,7 +46,21 @@ public class VarMatrice extends VarBase{
         setMatriceNome(matriceNome);
     }
 
+    public String getNomePuntoDaIndex(int index) throws ExeException {
+        if(graficDati == null){
+            throw new ExeException(this ,"getNomePuntoDaIndex" ,"Matrice non genrato da Graifico");
+        }
+        int locaIndex = 0;
+        Set<String> listaPunti = graficDati.getPunti();
+        for(String puntoOra : listaPunti){
+            if(locaIndex == index){
+                return puntoOra;
+            }
+            locaIndex++;
+        }
 
+        throw new ExeException(this ,"getNomePuntoDaIndex" ,"Index ("+index+") non trovato nella Matrice");
+    }//getNomePuntoDaIndex
 
     public void caricaMatriceDaFile(String fileName , String matriceNome) throws ExeException {
         //Funzione che dato un File, Carica la amtrice in essa

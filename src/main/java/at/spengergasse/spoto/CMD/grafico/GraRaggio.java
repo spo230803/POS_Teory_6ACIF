@@ -27,6 +27,7 @@ public class GraRaggio extends CMDBase {
             System.out.println("Grafico ("+nomeGrafico+") Radius : "+calcola(nomeGrafico));
         } catch (ExeException e) {
             System.out.println(e);
+            return;
         }
 
     }//avvio

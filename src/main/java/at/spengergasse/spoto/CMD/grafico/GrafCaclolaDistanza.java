@@ -38,6 +38,7 @@ public class GrafCaclolaDistanza extends CMDBase {
             calcola(nomeGraficoToMatrice);
         }catch (ExeException e) {
             System.out.println(e);
+            return;
         }
 
         System.out.println("Matrice distanza createa con successo ("+nomeMatriceReturn+")");
@@ -55,14 +56,18 @@ public class GrafCaclolaDistanza extends CMDBase {
         if(!super.controllaPK()){
             throw new PKException(this);
         }
-
         final int maxInt = Integer.MAX_VALUE;
+
+        //Verifico che esiste il Grafico
+        if(terminal.getPoolGrafico().get(parNomeGrafico) ==null){
+            throw new ExeException(this, "calcola", "Grafico non trovato : " + parNomeGrafico);
+        }
+
 
         try {
             grafico =  terminal.getPoolGrafico().get(parNomeGrafico).clone();
             Libreria.debug(grafico);
             matriceDistanza.setGraficDati(grafico);
-
         } catch (Exception e) {
             ExeException errore = new ExeException(this , "ricerca Grafico","Errore nel caricamento grafico ("+parNomeGrafico+") : "+ e.getMessage() );
             throw errore;

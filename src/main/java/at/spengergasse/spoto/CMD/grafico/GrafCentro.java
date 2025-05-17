@@ -31,9 +31,12 @@ public class GrafCentro extends CMDBase {
             calcola(nomeGrafico);
         }catch(ExeException e){
             System.out.println(e);
+            return;
         }
 
-        System.out.println("Cetnro calcolato corettamento e salvato in : "+returnNomeVar+"");
+        System.out.println("Cetnro calcolato corettamento e salvato (punti) in : "+returnNomeVar+"");
+        VarPunti punti = terminal.getPoolPunti().get(returnNomeVar);
+        System.out.println(punti);
     }//avvio
 
     public String calcola(String nomeGrafico) throws ExeException {
@@ -63,7 +66,7 @@ public class GrafCentro extends CMDBase {
 
         Libreria.debug(puntiDatiReturn);
 
-        terminal.addPoolPunit(nomeGrafico, puntiDatiReturn.clone());
+        terminal.addPoolPunit(returnNomeVar, puntiDatiReturn.clone());
         return returnNomeVar;
     }//calcola
 

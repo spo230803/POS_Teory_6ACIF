@@ -52,6 +52,7 @@ public class Terminale {
         mappaComandi.put("SET_SEPARA_VALORE", SetSeparaValore.class);
         mappaComandi.put("PK", PK.class);
         mappaComandi.put("VER" , Ver.class);
+        mappaComandi.put("DEBUG", Debug.class);
 
         //Gestione Grafici
         mappaComandi.put("GRA_LIST", GrafList.class);

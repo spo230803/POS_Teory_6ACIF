@@ -14,3 +14,7 @@
 2025-05-15 15:12:49#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (GRAFICO.GETGRAFICODATI().GET(I)) 
 2025-05-16 13:19:09#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (GRA_EXZENTR) 
 2025-05-16 15:53:32#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-05-16 22:38:26#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-05-17 07:44:34#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (A;B;4;C;2) 
+2025-05-17 07:49:33#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (A;B;4;C;2) 
+2025-05-17 08:25:30#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (GRA_EXZENTR) 

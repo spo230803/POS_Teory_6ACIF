@@ -42,6 +42,7 @@ public class GrafAdd extends CMDBase {
             nuovoGrafico.caricaGraficDaFile(nomeFile , nomeGrafico , graficoConPesi );
         } catch (ExeException e) {
             System.out.println(e.getMessage());
+            return;
         }
 
         terminal.addPoolGrafico(nomeGrafico , nuovoGrafico.clone());
