@@ -7,7 +7,7 @@
     Grestore delle Eccezioni personalizato da Me
  */
 
-package at.spengergasse.spoto.Libreria;
+package at.spengergasse.spoto.Libreria.exception;
 
 import lombok.Getter;
 

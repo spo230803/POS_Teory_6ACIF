@@ -19,3 +19,8 @@
 2025-05-17 07:49:33#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (A;B;4;C;2) 
 2025-05-17 08:25:30#at.spengergasse.spoto.Libreria.VarGrafico#caricaGraficDaFile - par fileGrafico#Si è verificato un Errore : File non Trovato (GRA_EXZENTR) 
 2025-05-17 10:02:18#at.spengergasse.spoto.CMD.grafico.GrafCaclolaDistanza#calcola#Si è verificato un Errore : Grafico non trovato : MUCCA
+2025-05-19 19:34:40#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-05-19 19:38:45#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-05-20 15:33:00#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-05-20 15:47:09#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-05-20 16:09:43#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma

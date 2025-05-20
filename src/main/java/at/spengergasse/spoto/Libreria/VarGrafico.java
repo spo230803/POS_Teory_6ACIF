@@ -10,6 +10,7 @@
 
 package at.spengergasse.spoto.Libreria;
 
+import at.spengergasse.spoto.Libreria.exception.ExeException;
 import at.spengergasse.spoto.Terminale;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +26,8 @@ public class VarGrafico extends VarBase{
 
     private Terminale terminale;
     private String nomeGrafico;
-    private boolean graficContienePeso;
+    private boolean isGraficContienePeso;
+    private VarMatrice matriceOrigne;
     private Map<String , Map<String , Integer>> graficoDati = new HashMap<>(); //Key = Lista Punti ; Map<puntoID , Peso> = Lista Colegamenti
 
 
@@ -36,12 +38,16 @@ public class VarGrafico extends VarBase{
     }
     public VarGrafico(String nomeGrafico, boolean graficContienePeso) {
         setNomeGrafico(nomeGrafico);
-        this.graficContienePeso = graficContienePeso;
+        this.isGraficContienePeso = graficContienePeso;
     }
     public VarGrafico(Terminale terminale, String nomeGrafico , boolean graficContienePeso) {
         setTerminale(terminale);
         setNomeGrafico(nomeGrafico);
-        this.graficContienePeso = graficContienePeso;
+        this.isGraficContienePeso = graficContienePeso;
+    }
+    public VarGrafico(Terminale terminale, String nomeGrafico) {
+        setTerminale(terminale);
+        setNomeGrafico(nomeGrafico);
     }
 
     public void addPunto(String puntoID) throws ExeException {
@@ -76,7 +82,7 @@ public class VarGrafico extends VarBase{
 
             for (Map.Entry<String, Integer> entry : colegamentoPeso.entrySet()) {
                 String destinazione = entry.getKey();
-                Integer peso = (graficContienePeso ?  entry.getValue() : 1);
+                Integer peso = (isGraficContienePeso ?  entry.getValue() : 1);
                 collegamenti.put(destinazione, peso);
             }
 
@@ -223,6 +229,7 @@ public class VarGrafico extends VarBase{
         StringBuilder strRetrun = new StringBuilder();
         strRetrun.append("-------------------------\n");
         strRetrun.append("Nome del Grafico : "+nomeGrafico+"\n");
+        strRetrun.append("Grafico "+ (isGraficContienePeso ? "con" : "seza") +" peso\ng");
 
         for (Map.Entry<String, Map<String, Integer>> entry : graficoDati.entrySet()) {
             String punto = entry.getKey();

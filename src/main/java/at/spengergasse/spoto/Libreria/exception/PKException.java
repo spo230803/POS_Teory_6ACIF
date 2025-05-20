@@ -1,4 +1,4 @@
-package at.spengergasse.spoto.Libreria;
+package at.spengergasse.spoto.Libreria.exception;
 
 public class PKException extends ExeException {
     public PKException(Object o) {

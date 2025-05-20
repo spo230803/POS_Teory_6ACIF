@@ -8,8 +8,9 @@
  */
 package at.spengergasse.spoto.CMD.grafico;
 
-import at.spengergasse.spoto.CMD.matrici.MatAddDaGrafico;
 import at.spengergasse.spoto.Libreria.*;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
+import at.spengergasse.spoto.Libreria.exception.PKException;
 import at.spengergasse.spoto.Terminale;
 
 import java.util.*;
@@ -56,8 +57,10 @@ public class GrafEscentricita extends CMDBase {
 
         if(!super.controllaPK()){throw new PKException(this);}
 
-        if(terminal.getPoolGrafico().get(nomeGrafico) == null){
-            throw new ExeException(this, "calcola", "Grafico non trovato :"+nomeGrafico);
+        try{
+            super.controllaEsisteGrafico(parNomeGrafico);
+        }catch(ExeException e){
+            throw e;
         }
 
         //Carico il Grafico

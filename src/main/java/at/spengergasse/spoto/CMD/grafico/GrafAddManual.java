@@ -9,7 +9,7 @@
 package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.ExeException;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
 import at.spengergasse.spoto.Libreria.VarGrafico;
 import at.spengergasse.spoto.Terminale;
 

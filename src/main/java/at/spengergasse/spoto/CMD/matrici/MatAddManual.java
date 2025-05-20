@@ -10,7 +10,7 @@
 package at.spengergasse.spoto.CMD.matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.ExeException;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
 import at.spengergasse.spoto.Libreria.Libreria;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
@@ -32,7 +32,7 @@ public class MatAddManual extends CMDBase {
         String nomeMatrice = super.inputString("Nome della Matrice");
         System.out.println("Nome della Matrice: " + nomeMatrice);
         int numRighe = numeroRighe();
-        int numColonna = numeroColonna();
+        int numColonna = numRighe;
         nuovaMatrice = new VarMatrice(nomeMatrice);
 
         for(int r = 0; r < numRighe; r++){
@@ -51,29 +51,15 @@ public class MatAddManual extends CMDBase {
 
     private int numeroRighe() {
         String numRighe = terminal.terminaleGetInput("Numero righe");
-        if(numRighe == null || numRighe.equals("") || !Libreria.isInteger(numRighe)) { numeroRighe();}
-        else {
+
             int num = Integer.parseInt(numRighe);
             if(num < 2 || num > SETTIING_MAX_MATRICE){
                 System.out.println("ERRORE : nummero righe deve essre tra 2 e "+SETTIING_MAX_MATRICE);
                 numeroRighe();
             }
-        }
         return Integer.parseInt(numRighe);
     }//numeroRighe
 
-    private int numeroColonna(){
-        String numColonna = terminal.terminaleGetInput("Numero colonne");
-        if(numColonna == null || numColonna.equals("") || !Libreria.isInteger(numColonna)) { numeroColonna();}
-        else {
-            int num = Integer.parseInt(numColonna);
-            if(num < 2 || num > SETTIING_MAX_MATRICE){
-                System.out.println("ERRORE : nummero colonne deve essre tra 2 e "+SETTIING_MAX_MATRICE);
-                numeroColonna();
-            }
-        }
-        return Integer.parseInt(numColonna);
-    }//numeroColonna
 
     private void inputValore(int r , int c){
         String val = terminal.terminaleGetInput("Inserire il valore per [ "+r+" , "+c+" ] ");

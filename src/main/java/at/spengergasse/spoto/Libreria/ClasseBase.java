@@ -7,7 +7,11 @@
 
 package at.spengergasse.spoto.Libreria;
 
+import at.spengergasse.spoto.Libreria.exception.ExeException;
+import at.spengergasse.spoto.Libreria.exception.NoDataException;
 import at.spengergasse.spoto.Terminale;
+
+import java.lang.reflect.Executable;
 
 import static at.spengergasse.spoto.Main.PRODUT_KEY;
 
@@ -49,9 +53,33 @@ public class ClasseBase {
         }
     }
 
+    protected void controllaEsisteGrafico(String nomeGrafico ) throws ExeException {
+        if(nomeGrafico == null || nomeGrafico.equals("")){
+            throw new ExeException(this, "Nome grafico non valido !");
+        }
+        if(terminal.getPoolGrafico().size() == 0 ){
+            throw new NoDataException(this , "Pool dei Grafici risuta vuoto! \n Per risolvere il problema usare il comando GRA_ADD o GRA_ADD_MANUAL");
+        }
+        if(terminal.getPoolGrafico().get(nomeGrafico) == null ){
+            throw new NoDataException(this , "Grafico non trovato : "+nomeGrafico);
+        }
+    }
+
+    protected void controllaEsisteMatrix(String nomeMatrix ) throws ExeException {
+        if(nomeMatrix == null || nomeMatrix.equals("")){
+            throw new ExeException(this, "Nome matrix non valido !");
+        }
+        if(terminal.getPoolMatrici().size() == 0 ){
+            throw new NoDataException(this , "Pool matrici ristula vuoto!\nPer risolvere il problea usare il comando MAT_ADD o MAT_ADD_MANUAL");
+        }
+        if(terminal.getPoolMatrici().get(nomeMatrix) == null ){
+            throw new NoDataException(this , "Matrice non trovato : "+nomeMatrix);
+        }
+    }
+
+    //TODO: implemntare Cripto by MD5
     public boolean controllaPK(){
 
-        //Vbgio - implemntare Cripto by MD5
         return true;
 
         /*

@@ -10,6 +10,8 @@
 package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.*;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
+import at.spengergasse.spoto.Libreria.exception.PKException;
 import at.spengergasse.spoto.Terminale;
 
 public class GrafCentro extends CMDBase {
@@ -43,7 +45,16 @@ public class GrafCentro extends CMDBase {
         if(!super.controllaPK()){ throw new PKException(this);}
 
         //Variabili locale
+        try{
+            super.controllaEsisteGrafico(nomeGrafico);
+        }catch (ExeException e){
+            throw e;
+        }
+
         VarGrafico grafio = terminal.getPoolGrafico().get(nomeGrafico);
+
+
+
         GrafEscentricita escentricita = new GrafEscentricita(terminal);
         GraRaggio raggio = new GraRaggio(terminal);
         puntiDatiReturn = new VarPunti(terminal , grafio , "Centro");

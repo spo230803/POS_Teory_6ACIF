@@ -1,6 +1,8 @@
 package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.*;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
+import at.spengergasse.spoto.Libreria.exception.PKException;
 import at.spengergasse.spoto.Terminale;
 
 import java.util.Map;

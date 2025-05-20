@@ -10,7 +10,7 @@
 package at.spengergasse.spoto.CMD.matrici;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.ExeException;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
 

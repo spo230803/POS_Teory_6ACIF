@@ -16,6 +16,7 @@ import at.spengergasse.spoto.CMD.exe.*;
 import at.spengergasse.spoto.Libreria.*;
 import at.spengergasse.spoto.CMD.punti.*;
 
+import at.spengergasse.spoto.Libreria.exception.ExeException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service; //Crea un solo Oggetto per TUTTO Il programma
@@ -72,7 +73,8 @@ public class Terminale {
         mappaComandi.put("MAT_ADD_MANUAL" , MatAddManual.class);
         mappaComandi.put("MAT_DELETE" , MatDelete.class);
         mappaComandi.put("MAT_LIST" , MatList.class );
-        mappaComandi.put("MAP_ADD_GRAFICO",MatAddDaGrafico.class );
+        mappaComandi.put("MAT_CREATE_GRAFICO" , MatCreaGrafico.class);
+
 
         //Gestione Punti
         mappaComandi.put("PUNT_PRINT", PuntPrint.class);
@@ -101,7 +103,7 @@ public class Terminale {
         if(inputUtente.equals("STOP")){
             //Uscita di Emmergenza
             System.out.println("Arresto d'Emmergenza del Programma in corso ...");
-            ExeException  e = new ExeException(this , "terminaleGetInput" , "Uscita d'Emmergenza del Programma" );
+            ExeException e = new ExeException(this , "terminaleGetInput" , "Uscita d'Emmergenza del Programma" );
             System.exit(-1);
         }
         return inputUtente;

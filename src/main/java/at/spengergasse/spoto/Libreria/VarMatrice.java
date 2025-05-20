@@ -10,6 +10,7 @@
 
 package at.spengergasse.spoto.Libreria;
 
+import at.spengergasse.spoto.Libreria.exception.ExeException;
 import at.spengergasse.spoto.Terminale;
 import lombok.Getter;
 import lombok.Setter;
@@ -136,6 +137,9 @@ public class VarMatrice extends VarBase{
         }
     }
 
+    public int getDimeMatrice(){
+        return matriceDati.size();
+    }
 
     public int getValore(int x , int y) throws ExeException {
         try{

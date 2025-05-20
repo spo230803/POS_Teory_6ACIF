@@ -9,6 +9,9 @@
 package at.spengergasse.spoto.CMD.grafico;
 
 import at.spengergasse.spoto.Libreria.*;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
+import at.spengergasse.spoto.Libreria.exception.NoDataException;
+import at.spengergasse.spoto.Libreria.exception.PKException;
 import at.spengergasse.spoto.Terminale;
 
 import java.util.HashMap;
@@ -59,10 +62,11 @@ public class GrafCaclolaDistanza extends CMDBase {
         final int maxInt = Integer.MAX_VALUE;
 
         //Verifico che esiste il Grafico
-        if(terminal.getPoolGrafico().get(parNomeGrafico) ==null){
-            throw new ExeException(this, "calcola", "Grafico non trovato : " + parNomeGrafico);
+        try {
+            super.controllaEsisteGrafico(parNomeGrafico);
+        }catch (ExeException e) {
+            throw e;
         }
-
 
         try {
             grafico =  terminal.getPoolGrafico().get(parNomeGrafico).clone();

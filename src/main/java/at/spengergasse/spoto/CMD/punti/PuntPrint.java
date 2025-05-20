@@ -1,7 +1,7 @@
 package at.spengergasse.spoto.CMD.punti;
 
 import at.spengergasse.spoto.Libreria.CMDBase;
-import at.spengergasse.spoto.Libreria.ExeException;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
 import at.spengergasse.spoto.Libreria.VarPunti;
 import at.spengergasse.spoto.Terminale;
 
