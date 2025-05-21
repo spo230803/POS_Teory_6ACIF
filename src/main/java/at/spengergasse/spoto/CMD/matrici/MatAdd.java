@@ -13,11 +13,15 @@ import at.spengergasse.spoto.Libreria.CMDBase;
 import at.spengergasse.spoto.Libreria.exception.ExeException;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Terminale;
+import lombok.Getter;
 
+@Getter
 public class MatAdd extends CMDBase {
 
     //Variabili di Istanza
     private VarMatrice matrice;
+    private String nomeMatrice ;
+
 
 
     public MatAdd(Terminale terminal) {
@@ -31,31 +35,34 @@ public class MatAdd extends CMDBase {
         if(!super.controllaPK()){return;}
 
 
-        String nomeMatrice = super.inputString("Nome della Matrice");
+        nomeMatrice = super.inputString("Nome della Matrice");
         String fileMatrice = super.inputString("Inserire file della Matrice");
 
         //Creo la Matirce
         matrice = new VarMatrice(terminal , nomeMatrice);
 
-       if (caricaFile(fileMatrice , nomeMatrice)) {
-           System.out.println("Matrice caricata correttamente : "+nomeMatrice);
-       }else {
-           System.out.println("Errore durante il caricamento della Matrice");
-       }
+        try{
+            caricaFile(fileMatrice , nomeMatrice);
+        } catch (ExeException e) {
+            System.out.println(e);
+            return;
+        }
+        System.out.println("Matrice caricata correttamente : "+nomeMatrice);
 
     }//avvio
 
-    private boolean caricaFile(String fileMatrice , String nomeMatrice) {
+    public void caricaFile(String fileMatrice , String nomeMatrice) throws ExeException {
+        if(matrice == null){
+            matrice = new VarMatrice(terminal , nomeMatrice);
+        }
         try{
             matrice.caricaMatriceDaFile(fileMatrice , nomeMatrice);
         }catch (ExeException e) {
-            System.out.println(e.getMessage());
-            return false;
+            throw e;
         }
 
        terminal.addPoolMatrici(nomeMatrice , matrice.clone());
 
-        return true;
     }//caricaFile
 
     @Override

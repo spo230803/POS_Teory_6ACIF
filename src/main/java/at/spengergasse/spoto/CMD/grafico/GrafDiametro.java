@@ -39,6 +39,13 @@ public class GrafDiametro extends CMDBase {
     }//avvio
 
     public int calcola(String nomeGrafico) throws ExeException {
+        //Funzone per il calcolo dell Diametro
+        //      PARAMETRI
+        // parNomeGrafico   Nome del grafico da calcolare la Matrice
+        //
+        //      RETRUN
+        // maxDiametro = INT diametro
+
         if(!super.controllaPK()){
             throw new PKException(this);
         }

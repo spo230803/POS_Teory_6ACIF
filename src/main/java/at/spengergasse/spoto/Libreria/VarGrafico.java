@@ -229,7 +229,7 @@ public class VarGrafico extends VarBase{
         StringBuilder strRetrun = new StringBuilder();
         strRetrun.append("-------------------------\n");
         strRetrun.append("Nome del Grafico : "+nomeGrafico+"\n");
-        strRetrun.append("Grafico "+ (isGraficContienePeso ? "con" : "seza") +" peso\ng");
+        strRetrun.append("Grafico "+ (isGraficContienePeso ? "con" : "senza") +" peso\n");
 
         for (Map.Entry<String, Map<String, Integer>> entry : graficoDati.entrySet()) {
             String punto = entry.getKey();

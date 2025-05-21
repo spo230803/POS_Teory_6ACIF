@@ -5,13 +5,14 @@ import at.spengergasse.spoto.Libreria.VarGrafico;
 import at.spengergasse.spoto.Libreria.VarMatrice;
 import at.spengergasse.spoto.Libreria.exception.ExeException;
 import at.spengergasse.spoto.Terminale;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+@Getter
 public class MatCreaGrafico extends CMDBase {
 
     private List<Character> lettere = new ArrayList<>();
@@ -25,6 +26,22 @@ public class MatCreaGrafico extends CMDBase {
 
         //Variabili Locali
         String nomeMatrice = super.inputString("Nome Matrice: ");
+        String nomeGrafico;
+
+        try {
+            nomeGrafico = carica(nomeMatrice);
+        } catch (ExeException e) {
+            System.out.println(e);
+            return;
+        }
+
+        System.out.println("Grafico caricato con successo (Grafico : "+nomeGrafico+") ");
+        System.out.println(terminal.getPoolGrafico().get(nomeGrafico));
+    }//avvio
+
+    public String carica(String nomeMatrice) throws ExeException {
+
+        //Varaibli Locali
         String nomeGrafico = terminal.getNomeRisultato();
         VarMatrice matriceOrigne;
         VarGrafico graficoDestinazione = new VarGrafico(terminal , nomeGrafico);
@@ -40,7 +57,7 @@ public class MatCreaGrafico extends CMDBase {
         try{
             super.controllaEsisteMatrix(nomeMatrice);
         } catch (ExeException e) {
-            System.out.println(e);
+            throw e;
         }
         matriceOrigne = terminal.getPoolMatrici().get(nomeMatrice).clone();
         dimeMatrx = matriceOrigne.getDimeMatrice();
@@ -69,11 +86,10 @@ public class MatCreaGrafico extends CMDBase {
             System.out.println(e);
         }
 
-
         terminal.addPoolGrafico(nomeGrafico, graficoDestinazione.clone());
-        System.out.println("Grafico caricato con successo (Grafico : "+nomeGrafico+") ");
-        System.out.println(graficoDestinazione);
-    }//avvio
+        return nomeGrafico;
+    }//carica
+
 
     @Override
     public void help() {

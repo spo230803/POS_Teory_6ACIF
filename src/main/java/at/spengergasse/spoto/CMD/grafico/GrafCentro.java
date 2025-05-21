@@ -42,6 +42,13 @@ public class GrafCentro extends CMDBase {
     }//avvio
 
     public String calcola(String nomeGrafico) throws ExeException {
+        //Funzone per il calcolo dell Diametro
+        //      PARAMETRI
+        // parNomeGrafico   Nome del grafico da calcolare la Matrice
+        //
+        //      RETRUN
+        // returnNomeVar = VarPunti - Punti del centro
+
         if(!super.controllaPK()){ throw new PKException(this);}
 
         //Variabili locale

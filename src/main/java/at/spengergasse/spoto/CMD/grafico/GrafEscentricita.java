@@ -48,7 +48,7 @@ public class GrafEscentricita extends CMDBase {
         // parNomeGrafico   Nome del grafico da calcolare la Matrice
         //
         //      RETRUN
-        // nomeMatriceReturn = Nome della matrice Creata che è stata salvata nel Pool nel Terminale (Oggetto)
+        // nomeMatriceReturn = Nome VarPunti che è stata salvata nel Pool nel Terminale (Oggetto)
         nomeGrafico = parNomeGrafico;
         GrafCaclolaDistanza matDaGrafico = new GrafCaclolaDistanza(terminal);
         String retunrMatrice;
@@ -109,7 +109,7 @@ public class GrafEscentricita extends CMDBase {
         }//end Cicolo Punti
 
         //Salvataggio dati Calcolati
-        terminal.addPoolPunit(nomeReturn , returnPunti);
+        terminal.addPoolPunit(nomeReturn , returnPunti.clone());
         return nomeReturn;
     }//calcola
 

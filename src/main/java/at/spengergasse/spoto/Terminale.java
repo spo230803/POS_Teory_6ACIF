@@ -54,6 +54,7 @@ public class Terminale {
         mappaComandi.put("PK", PK.class);
         mappaComandi.put("VER" , Ver.class);
         mappaComandi.put("DEBUG", Debug.class);
+        mappaComandi.put("RUN", Run.class);
 
         //Gestione Grafici
         mappaComandi.put("GRA_LIST", GrafList.class);
