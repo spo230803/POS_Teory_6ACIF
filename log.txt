@@ -24,3 +24,12 @@
 2025-05-20 15:33:00#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
 2025-05-20 15:47:09#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
 2025-05-20 16:09:43#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-06-02 18:45:39#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - par fileName#Si è verificato un Errore : File non trovato (TOP)
+2025-06-02 18:45:41#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-06-02 19:49:43#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : La Matrice ha un valore non valido : A
+2025-06-02 19:49:43#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : La Matrice ha un valore non valido : A
+2025-06-02 20:12:25#at.spengergasse.spoto.CMD.matrici.MatPrint#getMappaMatrici#Si è verificato un Errore : Matrice non trovato : R4
+2025-06-02 20:12:36#at.spengergasse.spoto.CMD.matrici.MatPrint#getMappaMatrici#Si è verificato un Errore : Matrice non trovato : R2
+2025-06-03 20:04:02#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-06-08 12:38:55#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-06-08 12:51:51#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma

@@ -40,7 +40,8 @@ public class Run extends CMDBase {
         GrafEscentricita grafEscentricita = new GrafEscentricita(terminal);
         GrafDiametro grafDiametro = new GrafDiametro(terminal);
         GrafCentro grafCentro = new GrafCentro(terminal);
-        GraRaggio graRaggio = new GraRaggio(terminal);
+        GrafRaggio graRaggio = new GrafRaggio(terminal);
+        GrafDFS grafDFS = new GrafDFS(terminal);
 
         //Carico File
         passo++;
@@ -54,6 +55,7 @@ public class Run extends CMDBase {
             System.out.println(e);
             return;
         }
+        System.out.println("===========");
 
 
         //Conve la matrice in Grafico
@@ -65,6 +67,8 @@ public class Run extends CMDBase {
             System.out.println(e);
             return;
         }
+        System.out.println("Conversione avventuta con Successo");
+        System.out.println("===========");
 
 
         //Calolo distanza
@@ -77,6 +81,7 @@ public class Run extends CMDBase {
             return;
         }
         System.out.println(terminal.getPoolMatrici().get(returnMatriceDistanza));
+        System.out.println("===========");
 
 
         //Exzentrizitaten
@@ -89,6 +94,7 @@ public class Run extends CMDBase {
             return;
         }
         System.out.println(terminal.getPoolPunti().get(returnMariceEscentricita));
+        System.out.println("===========");
 
         //Radio
         passo++;
@@ -100,6 +106,7 @@ public class Run extends CMDBase {
             return;
         }
         System.out.println("Radio :" + returnRadio);
+        System.out.println("===========");
 
         //Diametro
         passo++;
@@ -111,6 +118,7 @@ public class Run extends CMDBase {
             return;
         }
         System.out.println("Diamtro : "+retrunDametro);
+        System.out.println("===========");
 
 
         //Centro
@@ -123,13 +131,26 @@ public class Run extends CMDBase {
             return;
         }
         System.out.println(terminal.getPoolPunti().get(returnPuntiCentro));
+        System.out.println("===========");
 
 
+        //Cacolo DFS
+        passo++;
+        System.out.println(passo+") Esecuzione del DFS");
+        try{
+            grafDFS.calcola(nomeGrafico);
+            //Stampa a video il Risutato
+            System.out.println(grafDFS.getReturnComponenti());
+        } catch (Exception e) {
+            System.out.println(e);
+            return;
+        }
+        System.out.println("===========");
 
 
     }//avvio
 
-    //TODO: da finire
+
     @Override
     public void help() {
         System.out.println("Esecuzione del Progetto in autmatico senza chiamare manuale le varei Funzioni");

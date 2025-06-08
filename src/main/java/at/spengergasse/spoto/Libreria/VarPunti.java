@@ -25,7 +25,7 @@ public class VarPunti extends VarBase{
     private Terminale terminal;
     private VarGrafico grafioOrigne;
     private Map<String, Integer> puntiDati = new HashMap<String, Integer>();
-    private String notePunti;
+    private String notePunit;
 
     //Costruttori
     public VarPunti(Terminale terminal) {
@@ -35,14 +35,14 @@ public class VarPunti extends VarBase{
         setTerminal(terminal);
         setGrafioOrigne(grafioOrigne);
     }
-    public VarPunti(Terminale terminal, VarGrafico grafioOrigne,  String notePunti) {
+    public VarPunti(Terminale terminal, VarGrafico grafioOrigne, String notePunti) {
         setTerminal(terminal);
         setGrafioOrigne(grafioOrigne);
-        setNotePunti(notePunti);
+        setNotePunit(notePunti);
     }
     public VarPunti(Terminale terminal, String notePunti) {
         setTerminal(terminal);
-        setNotePunti(notePunti);
+        setNotePunit(notePunti);
     }
 
     public void addValore(String puntoID , int val){
@@ -57,10 +57,10 @@ public class VarPunti extends VarBase{
             StringBuilder strReturn= new StringBuilder();
             strReturn.append("------------------------\n");
             strReturn.append("Punti dal Grfico: "+grafioOrigne.getNomeGrafico()+"\n");
-            strReturn.append("Punti con il Valore: "+notePunti+"\n");
+            strReturn.append("Punti con il Valore: "+ notePunit +"\n");
             strReturn.append("{\n");
             for(String puntoID : puntiDati.keySet()){
-                strReturn.append("\t"+puntoID+": "+puntiDati.get(puntoID)+"\n");
+                strReturn.append("\t"+puntoID+": "+ puntiDati.get(puntoID)+"\n");
             }
             strReturn.append("}\n");
             return strReturn.toString();

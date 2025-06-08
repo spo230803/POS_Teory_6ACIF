@@ -63,7 +63,7 @@ public class GrafCentro extends CMDBase {
 
 
         GrafEscentricita escentricita = new GrafEscentricita(terminal);
-        GraRaggio raggio = new GraRaggio(terminal);
+        GrafRaggio raggio = new GrafRaggio(terminal);
         puntiDatiReturn = new VarPunti(terminal , grafio , "Centro");
         int raggioVal;
 

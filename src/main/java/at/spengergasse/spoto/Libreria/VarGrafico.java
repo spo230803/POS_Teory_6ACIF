@@ -230,6 +230,9 @@ public class VarGrafico extends VarBase{
         strRetrun.append("-------------------------\n");
         strRetrun.append("Nome del Grafico : "+nomeGrafico+"\n");
         strRetrun.append("Grafico "+ (isGraficContienePeso ? "con" : "senza") +" peso\n");
+        if(matriceOrigne != null){
+            strRetrun.append("Matrice Origne : "+matriceOrigne.getMatriceNome() +"\n");
+        }
 
         for (Map.Entry<String, Map<String, Integer>> entry : graficoDati.entrySet()) {
             String punto = entry.getKey();

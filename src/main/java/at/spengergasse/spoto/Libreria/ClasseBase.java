@@ -14,6 +14,7 @@ import at.spengergasse.spoto.Terminale;
 import java.lang.reflect.Executable;
 
 import static at.spengergasse.spoto.Main.PRODUT_KEY;
+import static at.spengergasse.spoto.Main.isDebug;
 
 public class ClasseBase {
 
@@ -77,8 +78,15 @@ public class ClasseBase {
         }
     }
 
+    protected void debug(String zona, String msg){
+        msg = "DEBUG (" +zona+") : "+msg;
+        if(isDebug) {
+            System.out.println(msg);
+        }
+    }//debug
+
     //TODO: implemntare Cripto by MD5
-    public boolean controllaPK(){
+    public boolean controllaPK() {
 
         return true;
 

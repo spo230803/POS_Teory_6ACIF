@@ -64,9 +64,11 @@ public class Terminale {
         mappaComandi.put("GRA_PRINT", GrafPrint.class);
         mappaComandi.put("GRA_CALC_DIST", GrafCaclolaDistanza.class);
         mappaComandi.put("GRA_EXZENTR", GrafEscentricita.class);
-        mappaComandi.put("GRA_RADIUS", GraRaggio.class);
+        mappaComandi.put("GRA_RADIUS", GrafRaggio.class);
         mappaComandi.put("GRA_DURCHMESSER", GrafDiametro.class);
         mappaComandi.put("GRA_ZENTRUM", GrafCentro.class);
+        mappaComandi.put("GRA_KOMPONENTEN", GrafComponenti.class);
+        mappaComandi.put("GRA_DFS", GrafDFS.class);
 
         //Gestione Matrici
         mappaComandi.put("MAT_ADD" , MatAdd.class );
@@ -112,7 +114,7 @@ public class Terminale {
 
     public void cancellaConsole(){
 
-        //VBGIO da migliorare
+        //TODO: da migliorare
         for (int i = 0; i < 50; i++) {
             System.out.println();
         }

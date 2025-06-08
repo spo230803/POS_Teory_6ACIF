@@ -7,14 +7,14 @@ import at.spengergasse.spoto.Terminale;
 
 import java.util.Map;
 
-public class GraRaggio extends CMDBase {
+public class GrafRaggio extends CMDBase {
 
     //Variabili di Instanza
     String returnNomePunti;
     VarPunti puntiDati = new VarPunti(terminal , "Raggio");
     String nomeGrafico;
 
-    public GraRaggio(Terminale terminal) {
+    public GrafRaggio(Terminale terminal) {
         super(terminal);
     }
 
