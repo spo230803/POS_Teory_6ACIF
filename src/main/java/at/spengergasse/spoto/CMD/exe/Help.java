@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static at.spengergasse.spoto.Main.isDebug;
+
 public class Help extends CMDBase {
 
     public Help(Terminale terminal) {
@@ -24,6 +26,7 @@ public class Help extends CMDBase {
 
     @Override
     public void avvio() {
+        int countComandi = 0;
         System.out.println("------------");
         System.out.println("Elenco di tutti i Comandi disponibili:");
         System.out.println();
@@ -32,9 +35,15 @@ public class Help extends CMDBase {
         Collections.sort(listaChiave);
 
         for (String chiave : listaChiave) {
-            System.out.println(chiave);
+            countComandi++;
+            if(isDebug) {
+                System.out.println(chiave + "\t\t >> \t\t" + terminal.getMappaComandi().get(chiave).getName());
+            }else {
+                System.out.println(chiave);
+            }
         }
         System.out.println();
+        System.out.println("Comandi Trovai : " +countComandi);
         System.out.println("Scriveere il comando seguito da ? per maggiorni informazioni sul qeul comando");
         System.out.println("Scrivere in Input 'stop' per l'arresto d'Emergenza del Programma!");
         System.out.println("------------");

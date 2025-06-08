@@ -15,7 +15,7 @@ public class Main {
     public static final String CLASSE = "6A CIF";
     public static final String APP_NAME = "POS Teora Projekt";
     public static final String APP_VERSION = "1.0.0";
-    public static final String APP_UPDATE = "2025-05-20";
+    public static final String APP_UPDATE = "2025-06-07";
 
     public static final String PRODUT_KEY = "X";
 
@@ -26,7 +26,7 @@ public class Main {
     public static final int SETTIING_MAX_MATRICE = 30;
 
     public static boolean isDebug = false;
-
+    public static int SPS_MAX_LOOP = 100; //Massimi loop/ricorsivi possibili
 
     public static void main(String[] args) {
         Terminale exe = new Terminale();
@@ -36,5 +36,5 @@ public class Main {
         System.out.println("--------------------------------------------");
         exe.avvioProgramma();
     }//main
-    
+
 }//Main

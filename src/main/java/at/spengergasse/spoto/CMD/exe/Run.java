@@ -19,7 +19,7 @@ public class Run extends CMDBase {
 
     @Override
     public void avvio() {
-
+        System.out.println("Load....");
         //Variabili in Istanza
         int passo = 0;
         int diametro = 0;
@@ -34,20 +34,30 @@ public class Run extends CMDBase {
 
 
         //Oggeti contenenti CMD
-        MatAdd matriceCarica = new MatAdd(terminal);
-        MatCreaGrafico matriceCreaGrafico = new MatCreaGrafico(terminal);
-        GrafCaclolaDistanza graficoDistanza = new GrafCaclolaDistanza(terminal);
-        GrafEscentricita grafEscentricita = new GrafEscentricita(terminal);
-        GrafDiametro grafDiametro = new GrafDiametro(terminal);
-        GrafCentro grafCentro = new GrafCentro(terminal);
-        GrafRaggio graRaggio = new GrafRaggio(terminal);
-        GrafDFS grafDFS = new GrafDFS(terminal);
+        MatAdd matriceCarica                    = new MatAdd(terminal);
+        MatCreaGrafico matriceCreaGrafico       = new MatCreaGrafico(terminal);
+        GrafCaclolaDistanza graficoDistanza     = new GrafCaclolaDistanza(terminal);
+        GrafEscentricita grafEscentricita       = new GrafEscentricita(terminal);
+        GrafDiametro grafDiametro               = new GrafDiametro(terminal);
+        GrafCentro grafCentro                   = new GrafCentro(terminal);
+        GrafRaggio graRaggio                    = new GrafRaggio(terminal);
+        GrafDFS grafDFS                         = new GrafDFS(terminal);
+        GrafAricolazioni grafAricolazioni       = new GrafAricolazioni(terminal);
+        GrafPonti grafPonti                     = new GrafPonti(terminal);
+
+
+
+        System.out.println();
+        System.out.println("*********************************************");
+        System.out.println("**********     AVVIO PROGRAMMA      *********");
+        System.out.println("*********************************************");
+        System.out.println();
 
         //Carico File
         passo++;
         System.out.println(passo+") Caricare il file Adjazenzmatrix che continee Adjazenzmatrix ");
-        nomeMatrice = super.inputString("Nome matrice: ");
-        String fileCSV = super.inputString("Percorso file: ");
+        nomeMatrice = super.inputString("Nome matrice");
+        String fileCSV = super.inputString("Percorso file");
 
         try {
             matriceCarica.caricaFile(fileCSV , nomeMatrice );
@@ -140,13 +150,43 @@ public class Run extends CMDBase {
         try{
             grafDFS.calcola(nomeGrafico);
             //Stampa a video il Risutato
-            System.out.println(grafDFS.getReturnComponenti());
-        } catch (Exception e) {
+            System.out.println("Nodi Trovati in DFS : "+grafDFS.getReturnComponenti());
+        } catch (ExeException e) {
             System.out.println(e);
             return;
         }
         System.out.println("===========");
 
+
+        //Ricerca Articolazioni
+        passo++;
+        System.out.println(passo+") Ricerca Aricolazioni");
+        try{
+            grafAricolazioni.calcola(nomeGrafico);
+            System.out.println("Articolazioni trovate : " + grafAricolazioni.getReturnAricolazioni());
+        } catch (ExeException e) {
+            System.out.println(e);
+            return;
+        }
+        System.out.println("===========");
+
+        //Ricerca dei Ponti
+        passo++;
+        System.out.println(passo+") Ricerca Ponti");
+        try {
+            grafPonti.calcola(nomeGrafico);
+            System.out.println(grafPonti.printReturn());
+        } catch (ExeException e) {
+            System.out.println(e);
+            return;
+        }
+        System.out.println("===========");
+
+        System.out.println();
+        System.out.println("*********************************************");
+        System.out.println("**********     FINE PROGRAMMA      **********");
+        System.out.println("*********************************************");
+        System.out.println();
 
     }//avvio
 

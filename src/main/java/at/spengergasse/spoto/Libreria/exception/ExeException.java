@@ -92,6 +92,12 @@ public class ExeException extends Exception {
 
     @Override
     public String toString() {
-        return "Errore nel Programma: " + super.getMessage();
+        StringBuilder str =new StringBuilder();
+        str.append("\n========ERROR========\n");
+        str.append("Obj  :\t"+ getOggetto().trim()+"\n");
+        str.append("Zona :\t"+ getZona().trim()+"\n");
+        str.append("Message :\n\t"+ getMessage()+"\n");
+        str.append("\n========ERROR========\n");
+        return str.toString();
     }
 }//ExeException

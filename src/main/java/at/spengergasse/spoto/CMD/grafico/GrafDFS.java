@@ -8,7 +8,7 @@ import lombok.Getter;
 
 import java.util.*;
 
-import static at.spengergasse.spoto.Main.SETTIING_MAX_MATRICE;
+import static at.spengergasse.spoto.Main.SPS_MAX_LOOP;
 import static at.spengergasse.spoto.Main.isDebug;
 
 @Getter
@@ -87,9 +87,9 @@ public class GrafDFS extends CMDBase {
         //Controllo i parametri prima di Iniziare
         if(!super.controllaPK()){ throw new ExeException(this, "calcolaDFS", "PK non Valido!");}
         sps++;
-        if(sps > SETTIING_MAX_MATRICE){
+        if(sps > SPS_MAX_LOOP){
             //Evito un cilco che risicha di essere infinito
-            throw new ExeException(this, "calcola_DFS" , "System Protection : troppe volte è stata chamata la stessa funzione");
+            throw new ExeException(this, "calcolaDFS" , "System Protection : funzone ricorsiva troppe volte chiamta!");
         }
 
         //Prendo il grafico dalla Memoria

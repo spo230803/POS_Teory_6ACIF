@@ -20,6 +20,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Set;
 
+import static at.spengergasse.spoto.Libreria.Libreria.debug;
 import static at.spengergasse.spoto.Libreria.Libreria.isInteger;
 
 @Setter
@@ -97,6 +98,11 @@ public class VarMatrice extends VarBase{
 
                 //Leggo il File Riga per Riga
                 String[] valore = linea.split(terminale.getSeparaValoreMarice());
+                debug("valore.length = "+valore.length);
+                if(valore.length < 2){
+                    throw new ExeException(this,"caricaMatriceDaFile", "I numero degli elemnti è inferiore a 2\n\tControlare che il separatore di valori è uguale a quello impostato nel Programma (esegui il comando SET_SEPARA_VALORE)");
+                }
+
                 ArrayList<Integer> riga = new ArrayList<>();
                 for(String val : valore){
                     val = val.trim();

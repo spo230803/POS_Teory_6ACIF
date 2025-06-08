@@ -20,9 +20,8 @@ import at.spengergasse.spoto.Libreria.exception.ExeException;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service; //Crea un solo Oggetto per TUTTO Il programma
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+
+import java.util.*;
 
 import static at.spengergasse.spoto.Main.SETTIING_HELP_CMD;
 
@@ -41,6 +40,7 @@ public class Terminale {
     private Map<String , VarMatrice> poolMatrici =new HashMap();
     private Map<String , VarGrafico> poolGrafico =new HashMap();
     private Map<String , VarPunti> poolPunti =new HashMap();
+    private ArrayList<String> cronologiaComandi = new ArrayList<>();
 
 
     public Terminale() {
@@ -55,6 +55,8 @@ public class Terminale {
         mappaComandi.put("VER" , Ver.class);
         mappaComandi.put("DEBUG", Debug.class);
         mappaComandi.put("RUN", Run.class);
+        mappaComandi.put("RAM", Ram.class);
+        mappaComandi.put("STORIA", Storia.class);
 
         //Gestione Grafici
         mappaComandi.put("GRA_LIST", GrafList.class);
@@ -69,6 +71,8 @@ public class Terminale {
         mappaComandi.put("GRA_ZENTRUM", GrafCentro.class);
         mappaComandi.put("GRA_KOMPONENTEN", GrafComponenti.class);
         mappaComandi.put("GRA_DFS", GrafDFS.class);
+        mappaComandi.put("GRA_ARTI", GrafAricolazioni.class);
+        mappaComandi.put("GRA_PONTI",  GrafPonti.class);
 
         //Gestione Matrici
         mappaComandi.put("MAT_ADD" , MatAdd.class );
@@ -138,6 +142,7 @@ public class Terminale {
 
        if(mappaComandi.containsKey(comando)){
             //Comando Trovato
+           cronologiaComandi.add(comando);
            try {
                CMDBase oggComando = mappaComandi.get(comando)
                        .getDeclaredConstructor(Terminale.class)
