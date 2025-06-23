@@ -87,3 +87,15 @@ Controlare che il separatore di valori è uguale a quello impostato nel Programm
 	Controlare che il separatore di valori è uguale a quello impostato nel Programma (esegui il comando SET_SEPARA_VALORE)
 2025-06-08 19:33:15#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : I numero degli elemnti è inferiore a 2
 	Controlare che il separatore di valori è uguale a quello impostato nel Programma (esegui il comando SET_SEPARA_VALORE)
+2025-06-10 12:33:40#at.spengergasse.spoto.Libreria.VarGrafico#controllaGrafico#Si è verificato un Errore : Il punto [3] ha un collegamento con punto non valido: AA
+2025-06-16 18:14:08#at.spengergasse.spoto.Terminale#terminaleGetInput#Si è verificato un Errore : Uscita d'Emmergenza del Programma
+2025-06-16 19:12:46#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : I numero degli elemnti è inferiore a 2
+	Controlare che il separatore di valori è uguale a quello impostato nel Programma (esegui il comando SET_SEPARA_VALORE)
+2025-06-16 19:12:46#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : I numero degli elemnti è inferiore a 2
+	Controlare che il separatore di valori è uguale a quello impostato nel Programma (esegui il comando SET_SEPARA_VALORE)
+2025-06-16 19:17:50#at.spengergasse.spoto.CMD.grafico.GrafPrint#getPoolGrafico#Si è verificato un Errore : Grafico non trovato : MAIN
+2025-06-16 19:18:06#at.spengergasse.spoto.CMD.grafico.GrafPrint#getPoolGrafico#Si è verificato un Errore : Grafico non trovato : R1
+2025-06-18 16:04:36#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile#Si è verificato un Errore : I numero degli elemnti è inferiore a 2
+	Controlare che il separatore di valori è uguale a quello impostato nel Programma (esegui il comando SET_SEPARA_VALORE)
+2025-06-18 16:04:36#at.spengergasse.spoto.Libreria.VarMatrice#caricaMatriceDaFile - Errore Lettura File#Si è verificato un Errore : I numero degli elemnti è inferiore a 2
+	Controlare che il separatore di valori è uguale a quello impostato nel Programma (esegui il comando SET_SEPARA_VALORE)

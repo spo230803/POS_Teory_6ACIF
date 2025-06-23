@@ -60,7 +60,7 @@ public class VarPunti extends VarBase{
             strReturn.append("Punti con il Valore: "+ notePunit +"\n");
             strReturn.append("{\n");
             for(String puntoID : puntiDati.keySet()){
-                strReturn.append("\t"+puntoID+": "+ puntiDati.get(puntoID)+"\n");
+                strReturn.append("\t"+puntoID+": "+ (puntiDati.get(puntoID) == Integer.MAX_VALUE ? "inf" : puntiDati.get(puntoID)) +"\n");
             }
             strReturn.append("}\n");
             return strReturn.toString();

@@ -32,7 +32,7 @@ public class GrafDFS extends CMDBase {
 
         try {
             super.controllaEsisteGrafico(nomeGraficoInput);
-            grafico = terminal.getPoolGrafico().get(nomeGraficoInput);
+            grafico = terminal.getPoolGrafico().get(nomeGraficoInput).clone();
 
             super.debug("Stampa punti grafico" , grafico.getPunti().toString());
 
@@ -114,6 +114,24 @@ public class GrafDFS extends CMDBase {
 
 
     }//calcola_DFS
+
+    //Calcoa_DFS Con pesi
+    public void calcolaDFSConDistanza(String nodoOra, String nomeGrafico, Set<String> visitati, Map<String, Integer> distanze, int distanzaCorrente) throws ExeException {
+        if (visitati.contains(nodoOra)) return;
+
+        visitati.add(nodoOra);
+        distanze.put(nodoOra, distanzaCorrente);
+
+        VarGrafico grafico = terminal.getPoolGrafico().get(nomeGrafico);
+        Map<String, Integer> vicini = grafico.getGraficoDati().getOrDefault(nodoOra, Collections.emptyMap());
+
+        for (String vicino : vicini.keySet()) {
+            if (!visitati.contains(vicino)) {
+                calcolaDFSConDistanza(vicino, nomeGrafico, visitati, distanze, distanzaCorrente + 1);
+            }
+        }
+    }
+    //calcolaDFSConDistanza
 
     @Override
     public void help() {

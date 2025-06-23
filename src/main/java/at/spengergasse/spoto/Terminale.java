@@ -73,6 +73,7 @@ public class Terminale {
         mappaComandi.put("GRA_DFS", GrafDFS.class);
         mappaComandi.put("GRA_ARTI", GrafAricolazioni.class);
         mappaComandi.put("GRA_PONTI",  GrafPonti.class);
+        mappaComandi.put("GRA_CALC_DIST_FW", GrafCaclolaDistanzaFW.class);
 
         //Gestione Matrici
         mappaComandi.put("MAT_ADD" , MatAdd.class );

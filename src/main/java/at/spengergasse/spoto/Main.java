@@ -14,8 +14,8 @@ public class Main {
     public static final String AUTORE = "SPOTO Giorgio Matteo";
     public static final String CLASSE = "6A CIF";
     public static final String APP_NAME = "POS Teora Projekt";
-    public static final String APP_VERSION = "1.0.0";
-    public static final String APP_UPDATE = "2025-06-07";
+    public static final String APP_VERSION = "1.2.0";
+    public static final String APP_UPDATE = "2025-06-23";
 
     public static final String PRODUT_KEY = "X";
 

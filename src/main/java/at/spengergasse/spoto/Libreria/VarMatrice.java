@@ -221,7 +221,13 @@ public class VarMatrice extends VarBase{
             for(int i = 0 ; i < matriceDati.size() ; i++){
                 strRetrun.append(listaPunti[i]).append("|").append("\t"); //Stampa intestazione per ogni riga
                 for (Integer v : matriceDati.get(i)) {
-                    strRetrun.append(v).append("\t");
+                    if(v == Integer.MAX_VALUE){
+                        strRetrun.append("inf").append("\t");
+                    } else if (v == Integer.MIN_VALUE) {
+                        strRetrun.append("neg").append("\t");
+                    }else{
+                        strRetrun.append(v).append("\t");
+                    }
                 }
                 strRetrun.append("\n");
             }

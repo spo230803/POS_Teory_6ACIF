@@ -8,12 +8,19 @@
  */
 package at.spengergasse.spoto.CMD.grafico;
 
-import at.spengergasse.spoto.Libreria.*;
-import at.spengergasse.spoto.Libreria.exception.*;
+import at.spengergasse.spoto.Libreria.CMDBase;
+import at.spengergasse.spoto.Libreria.Libreria;
+import at.spengergasse.spoto.Libreria.VarGrafico;
+import at.spengergasse.spoto.Libreria.VarMatrice;
+import at.spengergasse.spoto.Libreria.exception.ExeException;
+import at.spengergasse.spoto.Libreria.exception.PKException;
 import at.spengergasse.spoto.Terminale;
-import java.util.*;
 
-public class GrafCaclolaDistanza extends CMDBase {
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class GrafCaclolaDistanzaFW extends CMDBase {
 
     //Variabili Istanza
     VarGrafico grafico;
@@ -22,7 +29,7 @@ public class GrafCaclolaDistanza extends CMDBase {
     Map<String, Map<String, Integer>>  graficoDati;
 
 
-    public GrafCaclolaDistanza(Terminale terminal) {
+    public GrafCaclolaDistanzaFW(Terminale terminal) {
         super(terminal);
     }
 
@@ -111,7 +118,7 @@ public class GrafCaclolaDistanza extends CMDBase {
                 }
             }
 
-/* --- OLD ----
+
             // Algoritmo di Floyd-Warshall
             for (int k = 0; k < V; k++) {
                 for (int i = 0; i < V; i++) {
@@ -126,32 +133,6 @@ public class GrafCaclolaDistanza extends CMDBase {
                     }//for J
                 }//for I
             }//for K
-
- */
-
-            VarGrafico grafico = terminal.getPoolGrafico().get(parNomeGrafico).clone();
-            List<String> nodi = new ArrayList<>(grafico.getPunti());
-            GrafDFS dfs = new GrafDFS(terminal);
-            int countSrorgente = 0;
-
-            for (String sorgente : nodi) {
-                Set<String> visitati = new HashSet<>();
-                Map<String, Integer> distanze = new HashMap<>();
-                distanze.put(sorgente, 0);
-                int countDestinazione = 0;
-
-                dfs.calcolaDFSConDistanza(sorgente, parNomeGrafico, visitati, distanze, 0);
-
-                for (String destinazione : nodi) {
-                    int distanza = distanze.getOrDefault(destinazione, Integer.MAX_VALUE);
-                    matriceDistanza.setValore(countSrorgente , countDestinazione, distanza);
-                    countDestinazione++;
-                }
-                countSrorgente++;
-            }
-
-
-/// public void calcolaDFSConDistanza(String nodoOra, String nomeGrafico, Set<String> visitati, Map<String, Integer> distanze, int distanzaCorrente) throws ExeException {
         }catch (ExeException e){
             throw e;
         }
